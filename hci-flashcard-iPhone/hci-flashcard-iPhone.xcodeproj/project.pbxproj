@@ -14,8 +14,8 @@
 		756EDD6D18C3D63700CAF86C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD6C18C3D63700CAF86C /* main.m */; };
 		756EDD7118C3D63700CAF86C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD7018C3D63700CAF86C /* AppDelegate.m */; };
 		756EDD7418C3D63700CAF86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756EDD7218C3D63700CAF86C /* Main.storyboard */; };
-		756EDD7718C3D63700CAF86C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD7618C3D63700CAF86C /* FirstViewController.m */; };
-		756EDD7A18C3D63700CAF86C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD7918C3D63700CAF86C /* SecondViewController.m */; };
+		756EDD7718C3D63700CAF86C /* StudyChooseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD7618C3D63700CAF86C /* StudyChooseListViewController.m */; };
+		756EDD7A18C3D63700CAF86C /* CreateEditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD7918C3D63700CAF86C /* CreateEditListViewController.m */; };
 		756EDD7C18C3D63800CAF86C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756EDD7B18C3D63800CAF86C /* Images.xcassets */; };
 		756EDD8318C3D63800CAF86C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756EDD8218C3D63800CAF86C /* XCTest.framework */; };
 		756EDD8418C3D63800CAF86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756EDD6018C3D63700CAF86C /* Foundation.framework */; };
@@ -46,10 +46,10 @@
 		756EDD6F18C3D63700CAF86C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		756EDD7018C3D63700CAF86C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		756EDD7318C3D63700CAF86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		756EDD7518C3D63700CAF86C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		756EDD7618C3D63700CAF86C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		756EDD7818C3D63700CAF86C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		756EDD7918C3D63700CAF86C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		756EDD7518C3D63700CAF86C /* StudyChooseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyChooseListViewController.h; sourceTree = "<group>"; };
+		756EDD7618C3D63700CAF86C /* StudyChooseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyChooseListViewController.m; sourceTree = "<group>"; };
+		756EDD7818C3D63700CAF86C /* CreateEditListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateEditListViewController.h; sourceTree = "<group>"; };
+		756EDD7918C3D63700CAF86C /* CreateEditListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateEditListViewController.m; sourceTree = "<group>"; };
 		756EDD7B18C3D63800CAF86C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		756EDD8118C3D63800CAF86C /* hci-flashcard-iPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hci-flashcard-iPhoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		756EDD8218C3D63800CAF86C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,10 +118,10 @@
 				756EDD6F18C3D63700CAF86C /* AppDelegate.h */,
 				756EDD7018C3D63700CAF86C /* AppDelegate.m */,
 				756EDD7218C3D63700CAF86C /* Main.storyboard */,
-				756EDD7518C3D63700CAF86C /* FirstViewController.h */,
-				756EDD7618C3D63700CAF86C /* FirstViewController.m */,
-				756EDD7818C3D63700CAF86C /* SecondViewController.h */,
-				756EDD7918C3D63700CAF86C /* SecondViewController.m */,
+				756EDD7518C3D63700CAF86C /* StudyChooseListViewController.h */,
+				756EDD7618C3D63700CAF86C /* StudyChooseListViewController.m */,
+				756EDD7818C3D63700CAF86C /* CreateEditListViewController.h */,
+				756EDD7918C3D63700CAF86C /* CreateEditListViewController.m */,
 				756EDD7B18C3D63800CAF86C /* Images.xcassets */,
 				756EDD6718C3D63700CAF86C /* Supporting Files */,
 			);
@@ -254,9 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756EDD7A18C3D63700CAF86C /* SecondViewController.m in Sources */,
+				756EDD7A18C3D63700CAF86C /* CreateEditListViewController.m in Sources */,
 				756EDD7118C3D63700CAF86C /* AppDelegate.m in Sources */,
-				756EDD7718C3D63700CAF86C /* FirstViewController.m in Sources */,
+				756EDD7718C3D63700CAF86C /* StudyChooseListViewController.m in Sources */,
 				756EDD6D18C3D63700CAF86C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +466,7 @@
 				756EDD9418C3D63800CAF86C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		756EDD9518C3D63800CAF86C /* Build configuration list for PBXNativeTarget "hci-flashcard-iPhoneTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +475,7 @@
 				756EDD9718C3D63800CAF86C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

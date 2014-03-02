@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  hci-flashcard-iPhone
 //
 //  Created by jtsommer on 3/2/14.
 //  Copyright (c) 2014 CMPE131. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CreateEditListViewController.h"
 
-@interface FirstViewController ()
+@interface CreateEditListViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation CreateEditListViewController
 
 - (void)viewDidLoad
 {
