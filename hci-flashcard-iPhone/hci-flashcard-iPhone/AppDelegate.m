@@ -13,6 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Setup Core Data with Magical Record
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"FlashcardModel"];
     return YES;
 }
 							
