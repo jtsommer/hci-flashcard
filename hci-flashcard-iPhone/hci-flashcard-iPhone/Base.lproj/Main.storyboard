@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Study Choose List View Controller - Study-->
+        <!--Study Choose List View Controller - Sets-->
         <scene sceneID="I0e-1s-j4J">
             <objects>
                 <viewController id="NUG-qg-WSo" customClass="StudyChooseListViewController" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Study" id="D7c-Zx-lGE"/>
+                    <navigationItem key="navigationItem" title="Sets" id="D7c-Zx-lGE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRJ-pX-5ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="1561" y="-159"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Study Cards-->
         <scene sceneID="qnO-gE-6oB">
             <objects>
                 <viewController id="XKe-OT-Ss5" sceneMemberID="viewController">
@@ -140,7 +140,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qRo-Ih-fLx"/>
+                    <navigationItem key="navigationItem" title="Study Cards" id="qRo-Ih-fLx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGj-BR-yOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,7 +238,7 @@
             </objects>
             <point key="canvasLocation" x="1561" y="494"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Type Card-->
         <scene sceneID="gck-e8-oso">
             <objects>
                 <viewController id="Qtp-Vm-8rv" sceneMemberID="viewController">
@@ -281,7 +281,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LjQ-7W-rBr"/>
+                    <navigationItem key="navigationItem" title="Type Card" id="LjQ-7W-rBr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b54-Hy-jnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,7 +310,7 @@
         <scene sceneID="xem-df-2w1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hXc-Cl-Yxe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Study" id="MEd-Wo-l8F"/>
+                    <tabBarItem key="tabBarItem" title="Study" image="96-book.png" id="MEd-Wo-l8F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4YY-eD-K3v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -329,7 +329,7 @@
         <scene sceneID="s6i-CO-wK3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ouk-RN-oXM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create" id="tHh-mH-jGd"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="179-notepad.png" id="tHh-mH-jGd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FkM-mP-4Gl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -345,6 +345,10 @@
             <point key="canvasLocation" x="653" y="494"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="179-notepad.png" width="22" height="28"/>
+        <image name="96-book.png" width="18" height="26"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

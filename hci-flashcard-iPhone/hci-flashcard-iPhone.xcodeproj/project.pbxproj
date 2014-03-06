@@ -22,6 +22,8 @@
 		756EDD8518C3D63800CAF86C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756EDD6418C3D63700CAF86C /* UIKit.framework */; };
 		756EDD8D18C3D63800CAF86C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 756EDD8B18C3D63800CAF86C /* InfoPlist.strings */; };
 		756EDD8F18C3D63800CAF86C /* hci_flashcard_iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EDD8E18C3D63800CAF86C /* hci_flashcard_iPhoneTests.m */; };
+		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
+		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		756EDD8A18C3D63800CAF86C /* hci-flashcard-iPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hci-flashcard-iPhoneTests-Info.plist"; sourceTree = "<group>"; };
 		756EDD8C18C3D63800CAF86C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		756EDD8E18C3D63800CAF86C /* hci_flashcard_iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hci_flashcard_iPhoneTests.m; sourceTree = "<group>"; };
+		C8AB6EFC18C657FA005B135F /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "Resources/96-book.png"; sourceTree = "<group>"; };
+		C8AB6EFD18C657FA005B135F /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "Resources/179-notepad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				756EDD8818C3D63800CAF86C /* hci-flashcard-iPhoneTests */,
 				756EDD5F18C3D63700CAF86C /* Frameworks */,
 				756EDD5E18C3D63700CAF86C /* Products */,
+				C8AB6F0018C65808005B135F /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +160,15 @@
 				756EDD8B18C3D63800CAF86C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8AB6F0018C65808005B135F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8AB6EFC18C657FA005B135F /* 96-book.png */,
+				C8AB6EFD18C657FA005B135F /* 179-notepad.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				756EDD7C18C3D63800CAF86C /* Images.xcassets in Resources */,
+				C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */,
 				756EDD6B18C3D63700CAF86C /* InfoPlist.strings in Resources */,
 				756EDD7418C3D63700CAF86C /* Main.storyboard in Resources */,
+				C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
