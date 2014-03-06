@@ -50,6 +50,8 @@
 		C80418C518C916250062FF91 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C80418A918C916250062FF91 /* MagicalRecord.m */; };
 		C80418C718C916420062FF91 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80418C618C916420062FF91 /* CoreData.framework */; };
 		C80418D018C916D00062FF91 /* FlashcardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C80418CE18C916D00062FF91 /* FlashcardModel.xcdatamodeld */; };
+		C80418D318C9182E0062FF91 /* Flashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = C80418D218C9182E0062FF91 /* Flashcard.m */; };
+		C80418D618C9182E0062FF91 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = C80418D518C9182E0062FF91 /* Deck.m */; };
 		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
 		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
 /* End PBXBuildFile section */
@@ -142,6 +144,10 @@
 		C80418AB18C916250062FF91 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		C80418C618C916420062FF91 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C80418CF18C916D00062FF91 /* FlashcardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlashcardModel.xcdatamodel; sourceTree = "<group>"; };
+		C80418D118C9182E0062FF91 /* Flashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flashcard.h; sourceTree = "<group>"; };
+		C80418D218C9182E0062FF91 /* Flashcard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flashcard.m; sourceTree = "<group>"; };
+		C80418D418C9182E0062FF91 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		C80418D518C9182E0062FF91 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		C8AB6EFC18C657FA005B135F /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "Resources/96-book.png"; sourceTree = "<group>"; };
 		C8AB6EFD18C657FA005B135F /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "Resources/179-notepad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +221,10 @@
 				756EDD7818C3D63700CAF86C /* CreateEditListViewController.h */,
 				756EDD7918C3D63700CAF86C /* CreateEditListViewController.m */,
 				C80418CE18C916D00062FF91 /* FlashcardModel.xcdatamodeld */,
+				C80418D418C9182E0062FF91 /* Deck.h */,
+				C80418D518C9182E0062FF91 /* Deck.m */,
+				C80418D118C9182E0062FF91 /* Flashcard.h */,
+				C80418D218C9182E0062FF91 /* Flashcard.m */,
 				756EDD7B18C3D63800CAF86C /* Images.xcassets */,
 				756EDD6718C3D63700CAF86C /* Supporting Files */,
 			);
@@ -460,7 +470,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				756EDD7A18C3D63700CAF86C /* CreateEditListViewController.m in Sources */,
+				C80418D618C9182E0062FF91 /* Deck.m in Sources */,
 				756EDD7118C3D63700CAF86C /* AppDelegate.m in Sources */,
+				C80418D318C9182E0062FF91 /* Flashcard.m in Sources */,
 				756EDD7718C3D63700CAF86C /* StudyChooseListViewController.m in Sources */,
 				756EDD6D18C3D63700CAF86C /* main.m in Sources */,
 				C80418D018C916D00062FF91 /* FlashcardModel.xcdatamodeld in Sources */,
