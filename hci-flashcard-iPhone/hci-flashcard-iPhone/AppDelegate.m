@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Deck.h"
+#import "Flashcard.h"
 
 @implementation AppDelegate
 
@@ -15,6 +17,32 @@
     // Override point for customization after application launch.
     // Setup Core Data with Magical Record
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"FlashcardModel"];
+    
+    // Setup App with prefilled placeholder decks.
+	if (![[NSUserDefaults standardUserDefaults] objectForKey:@"MR_HasPrefilledDecks"]) {
+		// Create a placeholder Math deck
+		Deck *deckMath = [Deck createEntity];
+		deckMath.name  = @"Math";
+		
+		// Create a placeholder Math deck
+		Deck *deckChemistry = [Deck createEntity];
+		deckChemistry.name  = @"Chemistry";
+		
+		// Create a placeholder Math deck
+		Deck *deckEconomics = [Deck createEntity];
+		deckEconomics.name  = @"Economics";
+		
+		// Create a placeholder Math deck
+		Deck *deckWriting = [Deck createEntity];
+		deckWriting.name  = @"Writing";
+		
+		// Save Managed Object Context
+		[[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+		
+		// Set User Default to prevent another preload of data on startup.
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MR_HasPrefilledDecks"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
     return YES;
 }
 							
