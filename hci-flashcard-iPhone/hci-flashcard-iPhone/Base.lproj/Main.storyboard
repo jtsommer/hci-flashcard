@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ps-1N-fi3">
-                                <rect key="frame" x="136" y="125" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ps-1N-fi3">
+                                <rect key="frame" x="0.0" y="125" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Deck 1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,19 +26,35 @@
                                     <segue destination="foY-cK-WMq" kind="push" id="RSL-qF-ps3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Flashcard Set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-26-i0Z">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Flashcard Set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-26-i0Z">
                                 <rect key="frame" x="20" y="77" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-7x-hdt">
-                                <rect key="frame" x="20" y="163" width="280" height="263"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-7x-hdt">
+                                <rect key="frame" x="0.0" y="163" width="320" height="356"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W4B-7x-hdt" firstAttribute="leading" secondItem="lfw-re-T37" secondAttribute="leading" id="6nC-na-1lx"/>
+                            <constraint firstItem="CoI-26-i0Z" firstAttribute="top" secondItem="djK-go-8qO" secondAttribute="bottom" constant="13" id="B6C-dg-oJX"/>
+                            <constraint firstItem="2Ps-1N-fi3" firstAttribute="leading" secondItem="W4B-7x-hdt" secondAttribute="leading" id="Jji-GV-lhJ"/>
+                            <constraint firstItem="W4B-7x-hdt" firstAttribute="top" secondItem="2Ps-1N-fi3" secondAttribute="bottom" constant="8" symbolic="YES" id="Mhj-nX-3NK"/>
+                            <constraint firstItem="CoI-26-i0Z" firstAttribute="top" secondItem="djK-go-8qO" secondAttribute="bottom" constant="13" id="PpP-9L-Bzv"/>
+                            <constraint firstAttribute="trailing" secondItem="W4B-7x-hdt" secondAttribute="trailing" id="VdA-4H-Z9U"/>
+                            <constraint firstAttribute="trailing" secondItem="CoI-26-i0Z" secondAttribute="trailing" constant="20" id="aVb-eH-9p5"/>
+                            <constraint firstItem="2Ps-1N-fi3" firstAttribute="trailing" secondItem="W4B-7x-hdt" secondAttribute="trailing" id="dSq-vr-dqZ"/>
+                            <constraint firstItem="CoI-26-i0Z" firstAttribute="leading" secondItem="lfw-re-T37" secondAttribute="leading" constant="20" id="fAT-go-ESE"/>
+                            <constraint firstItem="CoI-26-i0Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lfw-re-T37" secondAttribute="leading" constant="20" id="kMP-AW-Teu"/>
+                            <constraint firstItem="2Ps-1N-fi3" firstAttribute="top" secondItem="lfw-re-T37" secondAttribute="top" constant="125" id="ki6-EJ-W2a"/>
+                            <constraint firstItem="2Ps-1N-fi3" firstAttribute="top" secondItem="CoI-26-i0Z" secondAttribute="bottom" constant="8" symbolic="YES" id="rTm-Dd-mAQ"/>
+                            <constraint firstItem="Gd9-xH-VbF" firstAttribute="top" secondItem="W4B-7x-hdt" secondAttribute="bottom" id="swD-yq-hWe"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CoI-26-i0Z" secondAttribute="trailing" constant="20" id="wM6-10-Rnt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sets" id="D7c-Zx-lGE"/>
                 </viewController>
@@ -158,8 +174,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOR-02-Xl2">
-                                <rect key="frame" x="20" y="352" width="280" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOR-02-Xl2">
+                                <rect key="frame" x="0.0" y="454" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Create New List">
@@ -169,12 +185,12 @@
                                     <segue destination="Sri-Yw-qQ1" kind="push" id="ckZ-xp-97e"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MK5-MP-fyi">
-                                <rect key="frame" x="20" y="110" width="280" height="234"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MK5-MP-fyi">
+                                <rect key="frame" x="0.0" y="110" width="320" height="336"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Lists" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4r-C7-qfL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Lists" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4r-C7-qfL">
                                 <rect key="frame" x="20" y="81" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -183,6 +199,19 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gOr-w9-fge" firstAttribute="top" secondItem="VOR-02-Xl2" secondAttribute="bottom" id="02Z-bq-yYo"/>
+                            <constraint firstItem="VOR-02-Xl2" firstAttribute="leading" secondItem="c3l-sS-PGF" secondAttribute="leading" id="2qv-3K-doi"/>
+                            <constraint firstItem="VOR-02-Xl2" firstAttribute="top" secondItem="MK5-MP-fyi" secondAttribute="bottom" constant="8" symbolic="YES" id="2sS-5u-rAf"/>
+                            <constraint firstAttribute="trailing" secondItem="VOR-02-Xl2" secondAttribute="trailing" id="Ghp-OG-Fec"/>
+                            <constraint firstItem="gOr-w9-fge" firstAttribute="top" secondItem="VOR-02-Xl2" secondAttribute="bottom" id="K2W-Fu-2py"/>
+                            <constraint firstItem="m4r-C7-qfL" firstAttribute="top" secondItem="eIs-qh-Zvz" secondAttribute="bottom" constant="17" id="S5d-bk-9s8"/>
+                            <constraint firstItem="m4r-C7-qfL" firstAttribute="leading" secondItem="c3l-sS-PGF" secondAttribute="leading" constant="20" id="c0C-NC-UKH"/>
+                            <constraint firstAttribute="trailing" secondItem="MK5-MP-fyi" secondAttribute="trailing" id="hyW-45-KXH"/>
+                            <constraint firstItem="MK5-MP-fyi" firstAttribute="top" secondItem="m4r-C7-qfL" secondAttribute="bottom" constant="8" id="iJB-0H-v1O"/>
+                            <constraint firstItem="gOr-w9-fge" firstAttribute="top" secondItem="MK5-MP-fyi" secondAttribute="bottom" constant="73" id="jt0-V8-Yaw"/>
+                            <constraint firstItem="MK5-MP-fyi" firstAttribute="leading" secondItem="c3l-sS-PGF" secondAttribute="leading" id="xLt-iC-dUj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create" id="Bmk-Va-G4j"/>
                 </viewController>
@@ -203,17 +232,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGm-7R-Dno">
-                                <rect key="frame" x="20" y="107" width="280" height="65"/>
+                                <rect key="frame" x="20" y="145" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Upload .xls">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3A-qB-ZyT">
-                                <rect key="frame" x="20" y="185" width="280" height="65"/>
+                                <rect key="frame" x="20" y="218" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Type New Cards">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -222,13 +251,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6s-HQ-kon">
-                                <rect key="frame" x="20" y="258" width="280" height="65"/>
+                                <rect key="frame" x="20" y="291" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Draw New Cards">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-0g-J3d">
+                                <rect key="frame" x="20" y="111" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihU-t3-qI7">
+                                <rect key="frame" x="111" y="107" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -266,7 +308,7 @@
                                 <rect key="frame" x="20" y="106" width="280" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
