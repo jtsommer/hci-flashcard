@@ -7,6 +7,8 @@
 //
 
 #import "CreateNewCardViewController.h"
+#import "Flashcard.h"
+#import "Deck.h"
 
 @interface CreateNewCardViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *frontCardTextView;
@@ -15,6 +17,8 @@
 @property (strong, nonatomic) UIBarButtonItem *nextButton;
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 @end
+
+NSString * const deckName = @"Math"; //Placeholder deck name to use for adding flashcards. Temporary this should be loaded dynamically
 
 @implementation CreateNewCardViewController
 
@@ -36,7 +40,13 @@
     // Create buttons
     self.nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextTextView)];
     self.doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing)];
+    // Create a flashcard if none exists
+    if (!self.card) {
+        self.card = [Flashcard createEntity];
+    }
 }
+
+#pragma mark Text View Methods
 
 - (void) nextTextView {
     [self.backCardTextView becomeFirstResponder];
@@ -85,6 +95,35 @@
     }
     return YES;
 }
+
+#pragma mark Button Actions
+
+- (void) saveTextViewsToCard {
+    self.card.front = self.frontCardTextView.text;
+    self.card.back = self.backCardTextView.text;
+    Deck *d = [Deck findFirstByAttribute:@"name" withValue:deckName];
+    if (d) {
+        NSLog(@"Deck Found!");
+        self.card.deck = d;
+    }
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+}
+
+- (IBAction)savePressed:(id)sender {
+    [self saveTextViewsToCard];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)createPressed:(id)sender {
+    [self saveTextViewsToCard];
+    // Create a new flashcard so the old one doesn't get overwritten
+    self.card = [Flashcard createEntity];
+    self.frontCardTextView.text = @"Front side text goes here...";
+    self.backCardTextView.text = @"Back side text goes here...";
+}
+
+
+#pragma mark
 
 - (void)didReceiveMemoryWarning
 {

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateNewCardViewController : UIViewController <UITextViewDelegate>
+@class Flashcard;
 
+@interface CreateNewCardViewController : UIViewController <UITextViewDelegate>
+@property (strong, nonatomic) Flashcard *card;
 @end

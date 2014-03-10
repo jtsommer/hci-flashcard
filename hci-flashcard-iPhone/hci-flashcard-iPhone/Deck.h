@@ -14,6 +14,6 @@
 @interface Deck : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Flashcard *cards;
+@property (nonatomic, retain) NSSet *cards;
 
 @end

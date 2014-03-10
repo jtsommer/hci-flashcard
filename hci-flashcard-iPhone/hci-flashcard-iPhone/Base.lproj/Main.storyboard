@@ -342,6 +342,9 @@
                                 <state key="normal" title="Create Another">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createPressed:" destination="Qtp-Vm-8rv" eventType="touchUpInside" id="7nE-7V-Ejt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvG-Fv-cPt">
                                 <rect key="frame" x="164" y="481" width="136" height="30"/>
@@ -349,6 +352,9 @@
                                 <state key="normal" title="Save &amp; Return">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="Qtp-Vm-8rv" eventType="touchUpInside" id="Ich-Pd-2bK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
