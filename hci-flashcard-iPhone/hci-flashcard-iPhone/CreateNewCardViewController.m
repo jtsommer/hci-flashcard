@@ -47,6 +47,19 @@
     self.navigationItem.rightBarButtonItem = nil;
 }
 
+-(void)animateTextView:(UITextView*)textView up:(BOOL)up {
+    const int movementDistance = -130; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? movementDistance : -movementDistance);
+    
+    [UIView beginAnimations: @"animateTextView" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView {
     // Select all text of the given text field, defers one run loop to activate after insertion
     // Thanks http://stackoverflow.com/a/19065568/3274404
@@ -57,12 +70,19 @@
     } else {
         self.navigationItem.rightBarButtonItem = self.doneButton;
     }
+    // If this is the second text field animate upwards from behind the keyboard
+    if ([textView isEqual:self.backCardTextView]) {
+        [self animateTextView:textView up:YES];
+    }
     return YES;
 }
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     // Probably don't need to overwrite this, when switching text views this gets called after
     // textViewShouldBeginEditing: on the new text field so deleting the button here is bad
+    if ([textView isEqual:self.backCardTextView]) {
+        [self animateTextView:textView up:NO];
+    }
     return YES;
 }
 
