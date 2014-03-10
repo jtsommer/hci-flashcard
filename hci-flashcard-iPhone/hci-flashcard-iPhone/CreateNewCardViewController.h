@@ -12,4 +12,5 @@
 
 @interface CreateNewCardViewController : UIViewController <UITextViewDelegate>
 @property (strong, nonatomic) Flashcard *card;
+@property (strong, nonatomic) NSString *deckName;
 @end

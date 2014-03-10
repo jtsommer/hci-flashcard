@@ -7,8 +7,10 @@
 //
 
 #import "CreateChooseMethodViewController.h"
+#import "CreateNewCardViewController.h"
 
 @interface CreateChooseMethodViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *deckNameTextField;
 
 @end
 
@@ -27,6 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"typeNewCardsSegue"]) {
+//        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        CreateNewCardViewController *newCardController = (CreateNewCardViewController *)segue.destinationViewController;
+        newCardController.deckName = self.deckNameTextField.text;
+    }
 }
 
 - (void)didReceiveMemoryWarning

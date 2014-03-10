@@ -18,8 +18,6 @@
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 @end
 
-NSString * const deckName = @"Math"; //Placeholder deck name to use for adding flashcards. Temporary this should be loaded dynamically
-
 @implementation CreateNewCardViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,6 +38,8 @@ NSString * const deckName = @"Math"; //Placeholder deck name to use for adding f
     // Create buttons
     self.nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextTextView)];
     self.doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing)];
+    // Set Navigation title
+    self.navigationItem.title = [NSString stringWithFormat:@"New - %@", self.deckName];
     // Create a flashcard if none exists
     if (!self.card) {
         self.card = [Flashcard createEntity];
@@ -99,14 +99,16 @@ NSString * const deckName = @"Math"; //Placeholder deck name to use for adding f
 #pragma mark Button Actions
 
 - (void) saveTextViewsToCard {
-    self.card.front = self.frontCardTextView.text;
-    self.card.back = self.backCardTextView.text;
-    Deck *d = [Deck findFirstByAttribute:@"name" withValue:deckName];
+    Deck *d = [Deck findFirstByAttribute:@"name" withValue:self.deckName];
     if (d) {
         NSLog(@"Deck Found!");
+        self.card.front = self.frontCardTextView.text;
+        self.card.back = self.backCardTextView.text;
         self.card.deck = d;
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+    } else {
+        NSLog(@"Deck not found. You done goofed :-(");
     }
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
 }
 
 - (IBAction)savePressed:(id)sender {
