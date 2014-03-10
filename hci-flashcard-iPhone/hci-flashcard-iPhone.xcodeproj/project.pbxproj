@@ -27,6 +27,7 @@
 		C80418D318C9182E0062FF91 /* Flashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = C80418D218C9182E0062FF91 /* Flashcard.m */; };
 		C80418D618C9182E0062FF91 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = C80418D518C9182E0062FF91 /* Deck.m */; };
 		C8058D1418CD6904000E7819 /* CreateChooseMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */; };
+		C8058D1718CD72C7000E7819 /* CreateNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */; };
 		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
 		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
 		C8DA9E6218CD224700DF1356 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80418C618C916420062FF91 /* CoreData.framework */; };
@@ -98,6 +99,8 @@
 		C80418D518C9182E0062FF91 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		C8058D1218CD6904000E7819 /* CreateChooseMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChooseMethodViewController.h; sourceTree = "<group>"; };
 		C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateChooseMethodViewController.m; sourceTree = "<group>"; };
+		C8058D1518CD72C7000E7819 /* CreateNewCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewCardViewController.h; sourceTree = "<group>"; };
+		C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewCardViewController.m; sourceTree = "<group>"; };
 		C8AB6EFC18C657FA005B135F /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "Resources/96-book.png"; sourceTree = "<group>"; };
 		C8AB6EFD18C657FA005B135F /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "Resources/179-notepad.png"; sourceTree = "<group>"; };
 		C8DA9EF418CD25D600DF1356 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 				756EDD6F18C3D63700CAF86C /* AppDelegate.h */,
 				756EDD7018C3D63700CAF86C /* AppDelegate.m */,
 				756EDD7218C3D63700CAF86C /* Main.storyboard */,
+				C8058D1518CD72C7000E7819 /* CreateNewCardViewController.h */,
+				C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */,
 				C8058D1218CD6904000E7819 /* CreateChooseMethodViewController.h */,
 				C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */,
 				756EDD7518C3D63700CAF86C /* StudyChooseListViewController.h */,
@@ -480,6 +485,7 @@
 				C8DA9F4018CD25D700DF1356 /* MagicalRecord+Actions.m in Sources */,
 				C8058D1418CD6904000E7819 /* CreateChooseMethodViewController.m in Sources */,
 				C8DA9F4318CD25D700DF1356 /* MagicalRecord+Options.m in Sources */,
+				C8058D1718CD72C7000E7819 /* CreateNewCardViewController.m in Sources */,
 				C8DA9F3E18CD25D700DF1356 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C80418D618C9182E0062FF91 /* Deck.m in Sources */,
 				C8DA9F4218CD25D700DF1356 /* MagicalRecord+iCloud.m in Sources */,

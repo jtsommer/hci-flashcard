@@ -286,10 +286,10 @@
             </objects>
             <point key="canvasLocation" x="1561" y="494"/>
         </scene>
-        <!--View Controller - Type Card-->
+        <!--Create New Card View Controller - Type Card-->
         <scene sceneID="gck-e8-oso">
             <objects>
-                <viewController id="Qtp-Vm-8rv" sceneMemberID="viewController">
+                <viewController id="Qtp-Vm-8rv" customClass="CreateNewCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G4T-Y4-sa9"/>
                         <viewControllerLayoutGuide type="bottom" id="t4O-da-EZB"/>
@@ -313,24 +313,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlD-Nm-quU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Front side text goes here..." translatesAutoresizingMaskIntoConstraints="NO" id="dlD-Nm-quU">
                                 <rect key="frame" x="20" y="102" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="p1T-gR-qit"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Qtp-Vm-8rv" id="1ay-5c-IUe"/>
+                                </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-XT-ydG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Back Side text goes here..." translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-XT-ydG">
                                 <rect key="frame" x="20" y="220" width="280" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Qtp-Vm-8rv" id="Te1-xm-V7c"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyA-8J-uVc">
                                 <rect key="frame" x="20" y="481" width="136" height="30"/>
@@ -371,7 +375,13 @@
                             <constraint firstItem="dlD-Nm-quU" firstAttribute="leading" secondItem="rt3-WO-FyY" secondAttribute="leading" id="xAh-pv-8vA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Type Card" id="LjQ-7W-rBr"/>
+                    <navigationItem key="navigationItem" title="Type Card" id="LjQ-7W-rBr">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="Azc-Vd-tlh"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backCardTextView" destination="cZ6-XT-ydG" id="dQ9-gn-NhG"/>
+                        <outlet property="frontCardTextView" destination="dlD-Nm-quU" id="jck-fk-PVx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b54-Hy-jnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
