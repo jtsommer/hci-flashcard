@@ -199,7 +199,7 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeckCell" textLabel="6vo-U7-Uvj" style="IBUITableViewCellStyleDefault" id="ReE-ql-nGG">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ReE-ql-nGG">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ReE-ql-nGG" id="2Gz-ht-sJ6">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -212,6 +212,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Sri-Yw-qQ1" kind="push" identifier="createDeckSelected" id="8sw-8l-zpg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -243,6 +246,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create" id="Bmk-Va-G4j"/>
+                    <connections>
+                        <outlet property="tableView" destination="MK5-MP-fyi" id="mOn-fa-vDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7GH-2X-CVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -488,5 +494,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="HQ9-iD-BDy"/>
+        <segue reference="8sw-8l-zpg"/>
     </inferredMetricsTieBreakers>
 </document>

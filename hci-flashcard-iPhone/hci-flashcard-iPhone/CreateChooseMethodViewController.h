@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface CreateChooseMethodViewController : UIViewController
-
+@property (strong, nonatomic) Deck *deckref;
 @end
