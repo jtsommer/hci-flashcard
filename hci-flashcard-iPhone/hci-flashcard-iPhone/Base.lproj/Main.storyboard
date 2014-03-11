@@ -104,7 +104,6 @@
                                 </state>
                                 <connections>
                                     <action selector="studyDeckPressed:" destination="foY-cK-WMq" eventType="touchUpInside" id="WFF-41-aAQ"/>
-                                    <segue destination="XKe-OT-Ss5" kind="push" id="HQ9-iD-BDy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-yX-y2f">
@@ -125,7 +124,6 @@
                                 </state>
                                 <connections>
                                     <action selector="viewCardsPressed:" destination="foY-cK-WMq" eventType="touchUpInside" id="9Vc-Mh-FdY"/>
-                                    <segue destination="XKe-OT-Ss5" kind="push" id="6Zt-Ig-cGG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UO-B2-sVS">
@@ -152,51 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egU-yi-JEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1561" y="-159"/>
-        </scene>
-        <!--View Controller - Study Cards-->
-        <scene sceneID="qnO-gE-6oB">
-            <objects>
-                <viewController id="XKe-OT-Ss5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yTO-eq-Tl0"/>
-                        <viewControllerLayoutGuide type="bottom" id="KOG-jU-izP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="epe-vs-koI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7L-FM-nsV">
-                                <rect key="frame" x="20" y="138" width="280" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Entire Deck">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-ZU-gkT">
-                                <rect key="frame" x="20" y="218" width="280" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Know">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocS-Q1-2GE">
-                                <rect key="frame" x="20" y="298" width="280" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Don't Know">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Study Cards" id="qRo-Ih-fLx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PGj-BR-yOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976" y="-159"/>
         </scene>
         <!--Create Edit List View Controller - Create-->
         <scene sceneID="CLJ-a9-i5j">
@@ -530,6 +483,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="8sw-8l-zpg"/>
         <segue reference="RSL-qF-ps3"/>
-        <segue reference="HQ9-iD-BDy"/>
     </inferredMetricsTieBreakers>
 </document>
