@@ -10,7 +10,7 @@
 #import "Deck.h"
 
 @interface StudyChooseListViewController ()
-@property (nonatomic) NSMutableArray *decks;
+@property (strong, nonatomic) NSMutableArray *decks;
 @end
 
 NSString * const SORT_KEY_NAME   = @"name";
