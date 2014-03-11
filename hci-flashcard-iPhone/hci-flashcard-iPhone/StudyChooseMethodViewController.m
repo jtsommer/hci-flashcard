@@ -10,7 +10,7 @@
 
 #import "Deck.h"
 
-@interface StudyChooseMethodViewController ()
+@interface StudyChooseMethodViewController () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *deckNameLabel;
 
 @end
@@ -33,6 +33,32 @@
     if (self.deckref) {
         self.deckNameLabel.text = self.deckref.name;
     }
+}
+
+- (void) showCardSelectionAlertForString:(NSString *)action {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ which cards?", action] message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Entire Deck", @"Cards I Know", @"Cards I Don't Know", nil];
+    [alert show];
+}
+
+#pragma mark Button Actions
+- (IBAction)studyDeckPressed:(id)sender {
+    [self showCardSelectionAlertForString:@"Study deck with"];
+}
+
+- (IBAction)multipleChoicePressed:(id)sender {
+    [self showCardSelectionAlertForString:@"Generate multiple choice for"];
+}
+
+- (IBAction)viewCardsPressed:(id)sender {
+    [self showCardSelectionAlertForString:@"View"];
+}
+
+
+
+#pragma mark UIAlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -103,6 +103,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="studyDeckPressed:" destination="foY-cK-WMq" eventType="touchUpInside" id="WFF-41-aAQ"/>
                                     <segue destination="XKe-OT-Ss5" kind="push" id="HQ9-iD-BDy"/>
                                 </connections>
                             </button>
@@ -112,6 +113,9 @@
                                 <state key="normal" title="Multiple Choice">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="multipleChoicePressed:" destination="foY-cK-WMq" eventType="touchUpInside" id="opG-aa-hvx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0b9-0m-EOc">
                                 <rect key="frame" x="20" y="244" width="280" height="30"/>
@@ -120,6 +124,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="viewCardsPressed:" destination="foY-cK-WMq" eventType="touchUpInside" id="9Vc-Mh-FdY"/>
                                     <segue destination="XKe-OT-Ss5" kind="push" id="6Zt-Ig-cGG"/>
                                 </connections>
                             </button>
@@ -525,6 +530,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="8sw-8l-zpg"/>
         <segue reference="RSL-qF-ps3"/>
-        <segue reference="6Zt-Ig-cGG"/>
+        <segue reference="HQ9-iD-BDy"/>
     </inferredMetricsTieBreakers>
 </document>
