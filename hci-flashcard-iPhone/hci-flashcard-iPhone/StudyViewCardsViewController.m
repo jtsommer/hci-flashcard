@@ -10,7 +10,7 @@
 #import "Deck.h"
 #import "Flashcard.h"
 
-@interface StudyViewCardsViewController ()
+@interface StudyViewCardsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *flashcardSet;
 @end
@@ -31,14 +31,35 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.flashcardSet.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChooseDeck"];
+    
+    Flashcard *flashcard = self.flashcardSet[indexPath.row];
+    cell.textLabel.text = flashcard.front;
+
+    
+    return cell;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     if (self.deckref) {
         NSLog(@"Deck was passed properly");
         self.flashcardSet = [self.deckref.cards allObjects];
     }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning
