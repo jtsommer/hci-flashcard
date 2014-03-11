@@ -46,6 +46,7 @@
 
 - (void)fetchDecks {
     self.decks = [[Deck findAllSortedBy:@"name" ascending:YES] mutableCopy];
+    NSLog(@"Fetch Decks - Create");
 }
 
 - (void)viewDidLoad
@@ -53,6 +54,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self fetchDecks];
+}
+
+- (void) didMoveToParentViewController:(UIViewController *)parent {
+    if (parent) {
+        [self fetchDecks];
+        [self.tableView reloadData];
+    }
 }
 
 @end

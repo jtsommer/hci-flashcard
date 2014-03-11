@@ -7,10 +7,11 @@
     <entity name="Flashcard" representedClassName="Flashcard" syncable="YES">
         <attribute name="back" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="front" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="learned" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="cards" inverseEntity="Deck" syncable="YES"/>
     </entity>
     <elements>
         <element name="Deck" positionX="0" positionY="0" width="128" height="73"/>
-        <element name="Flashcard" positionX="304" positionY="-27" width="128" height="90"/>
+        <element name="Flashcard" positionX="250" positionY="0" width="128" height="90"/>
     </elements>
 </model>
