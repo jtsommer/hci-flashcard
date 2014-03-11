@@ -28,6 +28,7 @@
 		C8058D1418CD6904000E7819 /* CreateChooseMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */; };
 		C8058D1718CD72C7000E7819 /* CreateNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */; };
 		C8058D1A18CED8D4000E7819 /* Flashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1918CED8D4000E7819 /* Flashcard.m */; };
+		C8058D1D18CEEA90000E7819 /* StudyChooseMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1C18CEEA90000E7819 /* StudyChooseMethodViewController.m */; };
 		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
 		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
 		C8DA9E6218CD224700DF1356 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80418C618C916420062FF91 /* CoreData.framework */; };
@@ -101,6 +102,8 @@
 		C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewCardViewController.m; sourceTree = "<group>"; };
 		C8058D1818CED8D4000E7819 /* Flashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flashcard.h; sourceTree = "<group>"; };
 		C8058D1918CED8D4000E7819 /* Flashcard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flashcard.m; sourceTree = "<group>"; };
+		C8058D1B18CEEA90000E7819 /* StudyChooseMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyChooseMethodViewController.h; sourceTree = "<group>"; };
+		C8058D1C18CEEA90000E7819 /* StudyChooseMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyChooseMethodViewController.m; sourceTree = "<group>"; };
 		C8AB6EFC18C657FA005B135F /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "Resources/96-book.png"; sourceTree = "<group>"; };
 		C8AB6EFD18C657FA005B135F /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "Resources/179-notepad.png"; sourceTree = "<group>"; };
 		C8DA9EF418CD25D600DF1356 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
@@ -224,19 +227,9 @@
 				756EDD6F18C3D63700CAF86C /* AppDelegate.h */,
 				756EDD7018C3D63700CAF86C /* AppDelegate.m */,
 				756EDD7218C3D63700CAF86C /* Main.storyboard */,
-				C8058D1518CD72C7000E7819 /* CreateNewCardViewController.h */,
-				C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */,
-				C8058D1218CD6904000E7819 /* CreateChooseMethodViewController.h */,
-				C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */,
-				756EDD7518C3D63700CAF86C /* StudyChooseListViewController.h */,
-				756EDD7618C3D63700CAF86C /* StudyChooseListViewController.m */,
-				756EDD7818C3D63700CAF86C /* CreateEditListViewController.h */,
-				756EDD7918C3D63700CAF86C /* CreateEditListViewController.m */,
-				C80418CE18C916D00062FF91 /* FlashcardModel.xcdatamodeld */,
-				C80418D418C9182E0062FF91 /* Deck.h */,
-				C80418D518C9182E0062FF91 /* Deck.m */,
-				C8058D1818CED8D4000E7819 /* Flashcard.h */,
-				C8058D1918CED8D4000E7819 /* Flashcard.m */,
+				C8058D1E18CEEAA0000E7819 /* Views - Create */,
+				C8058D1F18CEEADA000E7819 /* Views - Study */,
+				C8058D2018CEEAF5000E7819 /* Database */,
 				756EDD7B18C3D63800CAF86C /* Images.xcassets */,
 				756EDD6718C3D63700CAF86C /* Supporting Files */,
 			);
@@ -270,6 +263,42 @@
 				756EDD8B18C3D63800CAF86C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8058D1E18CEEAA0000E7819 /* Views - Create */ = {
+			isa = PBXGroup;
+			children = (
+				756EDD7818C3D63700CAF86C /* CreateEditListViewController.h */,
+				756EDD7918C3D63700CAF86C /* CreateEditListViewController.m */,
+				C8058D1218CD6904000E7819 /* CreateChooseMethodViewController.h */,
+				C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */,
+				C8058D1518CD72C7000E7819 /* CreateNewCardViewController.h */,
+				C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */,
+			);
+			name = "Views - Create";
+			sourceTree = "<group>";
+		};
+		C8058D1F18CEEADA000E7819 /* Views - Study */ = {
+			isa = PBXGroup;
+			children = (
+				756EDD7518C3D63700CAF86C /* StudyChooseListViewController.h */,
+				756EDD7618C3D63700CAF86C /* StudyChooseListViewController.m */,
+				C8058D1B18CEEA90000E7819 /* StudyChooseMethodViewController.h */,
+				C8058D1C18CEEA90000E7819 /* StudyChooseMethodViewController.m */,
+			);
+			name = "Views - Study";
+			sourceTree = "<group>";
+		};
+		C8058D2018CEEAF5000E7819 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C80418CE18C916D00062FF91 /* FlashcardModel.xcdatamodeld */,
+				C80418D418C9182E0062FF91 /* Deck.h */,
+				C80418D518C9182E0062FF91 /* Deck.m */,
+				C8058D1818CED8D4000E7819 /* Flashcard.h */,
+				C8058D1918CED8D4000E7819 /* Flashcard.m */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 		C8AB6F0018C65808005B135F /* Resources */ = {
@@ -511,6 +540,7 @@
 				C8DA9F4618CD25D700DF1356 /* MagicalRecord.m in Sources */,
 				756EDD6D18C3D63700CAF86C /* main.m in Sources */,
 				C8DA9F4418CD25D700DF1356 /* MagicalRecord+Setup.m in Sources */,
+				C8058D1D18CEEA90000E7819 /* StudyChooseMethodViewController.m in Sources */,
 				C8DA9F3218CD25D600DF1356 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				C80418D018C916D00062FF91 /* FlashcardModel.xcdatamodeld in Sources */,
 				C8DA9F3D18CD25D700DF1356 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
