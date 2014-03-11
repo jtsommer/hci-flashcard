@@ -50,6 +50,7 @@
         //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
         StudyChooseMethodViewController *chooseMethodController = (StudyChooseMethodViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSLog(@"Index row selected %d ", indexPath.row);
         Deck *deck = self.decks[indexPath.row];
         chooseMethodController.deckref = deck;
     }
