@@ -13,10 +13,6 @@
 @property (strong, nonatomic) NSMutableArray *decks;
 @end
 
-NSString * const SORT_KEY_NAME   = @"name";
-NSString * const SORT_KEY_RATING = @"beerDetails.rating";
-NSString * const WB_SORT_KEY     = @"WB_SORT_KEY";
-
 @implementation StudyChooseListViewController
 
 - (void)viewWillAppear:(BOOL)animated {

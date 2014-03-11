@@ -8,9 +8,11 @@
 
 #import "CreateEditListViewController.h"
 #import "Deck.h"
+#import "CreateChooseMethodViewController.h"
 
 @interface CreateEditListViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *decks;
 @end
 
@@ -30,6 +32,16 @@
     
     return cell;
     
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"createDeckSelected"]) {
+        //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        CreateChooseMethodViewController *chooseMethodController = (CreateChooseMethodViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Deck *deck = self.decks[indexPath.row];
+        chooseMethodController.deckref = deck;
+    }
 }
 
 - (void)fetchDecks {
