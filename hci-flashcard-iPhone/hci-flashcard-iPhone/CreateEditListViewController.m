@@ -46,7 +46,6 @@
 
 - (void)fetchDecks {
     self.decks = [[Deck findAllSortedBy:@"name" ascending:YES] mutableCopy];
-    NSLog(@"Fetch Decks - Create");
 }
 
 - (void)viewDidLoad

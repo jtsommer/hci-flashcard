@@ -9,7 +9,7 @@
 #import "CreateChooseMethodViewController.h"
 #import "CreateNewCardViewController.h"
 
-@interface CreateChooseMethodViewController ()
+@interface CreateChooseMethodViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *deckNameTextField;
 
 @end
@@ -37,6 +37,23 @@ NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
     }
 }
 
+- (void) presentAlertViewForError:(NSString *)error {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Change Deck Name"
+                                                    message:error
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+#pragma mark TextField Delegate
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark Transition Views
+
 - (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:TYPE_NEW_CARD_SEGUE]) {
         if (self.deckref) {
@@ -49,10 +66,10 @@ NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
                 self.deckref.name = self.deckNameTextField.text;
                 return YES;
             } else {
-                NSLog(@"Deck already exists");
+                [self presentAlertViewForError:[NSString stringWithFormat:@"A flashcard deck with name \"%@\" already exists", self.deckNameTextField.text]];
             }
         } else {
-            NSLog(@"Empty Deck name");
+            [self presentAlertViewForError:@"Please enter a name for your new flashcard deck"];
         }
     }
     return NO;
@@ -62,7 +79,6 @@ NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
     if ([segue.identifier isEqualToString:TYPE_NEW_CARD_SEGUE]) {
 //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
         CreateNewCardViewController *newCardController = (CreateNewCardViewController *)segue.destinationViewController;
-//        newCardController.deckName = self.deckNameTextField.text;
         newCardController.deckref = self.deckref;
     }
 }
