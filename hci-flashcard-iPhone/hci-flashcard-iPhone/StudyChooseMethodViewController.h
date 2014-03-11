@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StudyChooseMethodViewController : UIViewController
+@class Deck;
 
+@interface StudyChooseMethodViewController : UIViewController
+@property (strong, nonatomic) Deck *deckref;
 @end

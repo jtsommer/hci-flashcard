@@ -8,7 +8,10 @@
 
 #import "StudyChooseMethodViewController.h"
 
+#import "Deck.h"
+
 @interface StudyChooseMethodViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *deckNameLabel;
 
 @end
 
@@ -27,6 +30,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if (self.deckref) {
+        self.deckNameLabel.text = self.deckref.name;
+    }
 }
 
 - (void)didReceiveMemoryWarning

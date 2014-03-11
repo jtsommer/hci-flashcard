@@ -140,6 +140,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Study" id="WZh-VJ-s8W"/>
+                    <connections>
+                        <outlet property="deckNameLabel" destination="EsO-mn-rso" id="h8P-7V-RYM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egU-yi-JEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,8 +520,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RSL-qF-ps3"/>
-        <segue reference="HQ9-iD-BDy"/>
         <segue reference="8sw-8l-zpg"/>
+        <segue reference="RSL-qF-ps3"/>
+        <segue reference="6Zt-Ig-cGG"/>
     </inferredMetricsTieBreakers>
 </document>
