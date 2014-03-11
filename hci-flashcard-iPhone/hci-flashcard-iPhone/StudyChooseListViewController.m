@@ -8,6 +8,7 @@
 
 #import "StudyChooseListViewController.h"
 #import "Deck.h"
+#import "StudyChooseMethodViewController.h"
 
 @interface StudyChooseListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -42,6 +43,16 @@
     
     return cell;
     
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"studyDeckSelected"]) {
+        //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        StudyChooseMethodViewController *chooseMethodController = (StudyChooseMethodViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Deck *deck = self.decks[indexPath.row];
+        chooseMethodController.deckref = deck;
+    }
 }
 
 - (void)viewDidLoad {
