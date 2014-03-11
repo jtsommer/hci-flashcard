@@ -113,24 +113,9 @@
     }
 }
 
-// Code snippet from http://stackoverflow.com/a/14344846/3274404
-- (void) popControllersNumber:(int)number
-{
-    if (number <= 1)
-        [[self navigationController] popViewControllerAnimated:YES];
-    else
-    {
-        NSArray* controller = [[self navigationController] viewControllers];
-        int requiredIndex = [controller count] - number - 1;
-        if (requiredIndex < 0) requiredIndex = 0;
-        UIViewController* requireController = [[[self navigationController] viewControllers] objectAtIndex:requiredIndex];
-        [[self navigationController] popToViewController:requireController animated:YES];
-    }
-}
-
 - (IBAction)savePressed:(id)sender {
     [self saveTextViewsToCard];
-    [self popControllersNumber:2];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)createPressed:(id)sender {
