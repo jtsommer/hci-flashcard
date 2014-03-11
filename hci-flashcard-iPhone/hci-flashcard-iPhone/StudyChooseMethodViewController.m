@@ -12,8 +12,24 @@
 
 @interface StudyChooseMethodViewController () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *deckNameLabel;
-
+@property (strong, nonatomic) NSString *segueToPerform;
 @end
+
+// Strings for card groups
+NSString * const GROUP_ENTIRE_DECK = @"Entire Deck";
+NSString * const GROUP_LEARNED = @"Cards I Know";
+NSString * const GROUP_NOT_LEARNED = @"Cards I Don't Know";
+
+// Strings for button action selection
+NSString * const ACTION_STUDY = @"Study deck with which cards?";
+NSString * const ACTION_MC = @"Generate multiple choice for which cards?";
+NSString * const ACTION_VIEW = @"View which cards?";
+
+// Strings for segues
+NSString * const SEGUE_STUDY    = @"studyStudySegue";
+NSString * const SEGUE_MC       = @"studyMCSegue";
+NSString * const SEGUE_VIEW     = @"studyViewSegue";
+NSString * const SEGUE_REMINDER = @"studyReminderSegue";
 
 @implementation StudyChooseMethodViewController
 
@@ -35,22 +51,25 @@
     }
 }
 
-- (void) showCardSelectionAlertForString:(NSString *)action {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ which cards?", action] message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Entire Deck", @"Cards I Know", @"Cards I Don't Know", nil];
+- (void) showCardSelectionAlertForTitle:(NSString *)title {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:GROUP_ENTIRE_DECK, GROUP_LEARNED, GROUP_NOT_LEARNED, nil];
     [alert show];
 }
 
 #pragma mark Button Actions
 - (IBAction)studyDeckPressed:(id)sender {
-    [self showCardSelectionAlertForString:@"Study deck with"];
+    [self showCardSelectionAlertForTitle:ACTION_STUDY];
+    self.segueToPerform = SEGUE_STUDY;
 }
 
 - (IBAction)multipleChoicePressed:(id)sender {
-    [self showCardSelectionAlertForString:@"Generate multiple choice for"];
+    [self showCardSelectionAlertForTitle:ACTION_MC];
+    self.segueToPerform = SEGUE_MC;
 }
 
 - (IBAction)viewCardsPressed:(id)sender {
-    [self showCardSelectionAlertForString:@"View"];
+    [self showCardSelectionAlertForTitle:ACTION_VIEW];
+    self.segueToPerform = SEGUE_VIEW;
 }
 
 
@@ -58,7 +77,18 @@
 #pragma mark UIAlertView Delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    NSString *selection = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([selection isEqualToString:@"Cancel"]) {
+        return;
+    }
+    if ([selection isEqualToString:GROUP_ENTIRE_DECK]) {
+        NSLog(@"Do something with entire deck");
+    } else if ([selection isEqualToString:GROUP_LEARNED]) {
+        NSLog(@"Do something with learned cards");
+    } else if ([selection isEqualToString:GROUP_NOT_LEARNED]) {
+        NSLog(@"Do something with unlearned cards");
+    }
+    [self performSegueWithIdentifier:self.segueToPerform sender:self];
 }
 
 - (void)didReceiveMemoryWarning
