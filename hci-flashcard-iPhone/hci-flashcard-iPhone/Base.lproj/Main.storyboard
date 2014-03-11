@@ -282,7 +282,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qtp-Vm-8rv" kind="push" identifier="typeNewCardsSegue" id="TEg-eZ-gLI"/>
+                                    <segue destination="Qtp-Vm-8rv" kind="push" identifier="typeNewCardSegue" id="TEg-eZ-gLI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6s-HQ-kon">

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class Flashcard;
+@class Deck;
 
 @interface CreateNewCardViewController : UIViewController <UITextViewDelegate>
 @property (strong, nonatomic) Flashcard *card;
 @property (strong, nonatomic) NSString *deckName;
+@property (strong, nonatomic) Deck *deckref;
 @end

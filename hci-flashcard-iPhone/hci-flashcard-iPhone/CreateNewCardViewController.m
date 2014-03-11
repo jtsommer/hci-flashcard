@@ -39,6 +39,9 @@
     self.nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextTextView)];
     self.doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing)];
     // Set Navigation title
+    if (!self.deckName) {
+        self.deckName = self.deckref.name;
+    }
     self.navigationItem.title = [NSString stringWithFormat:@"New - %@", self.deckName];
     // Create a flashcard if none exists
     if (!self.card) {
@@ -99,12 +102,11 @@
 #pragma mark Button Actions
 
 - (void) saveTextViewsToCard {
-    Deck *d = [Deck findFirstByAttribute:@"name" withValue:self.deckName];
-    if (d) {
+    if (self.deckref) {
         NSLog(@"Deck Found!");
         self.card.front = self.frontCardTextView.text;
         self.card.back = self.backCardTextView.text;
-        self.card.deck = d;
+        self.card.deck = self.deckref;
         [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
     } else {
         NSLog(@"Deck not found. You done goofed :-(");
