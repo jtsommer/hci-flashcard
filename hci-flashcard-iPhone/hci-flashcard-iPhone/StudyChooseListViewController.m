@@ -9,7 +9,9 @@
 #import "StudyChooseListViewController.h"
 #import "Deck.h"
 
-@interface StudyChooseListViewController ()
+@interface StudyChooseListViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *decks;
 @end
 
@@ -25,9 +27,27 @@
     }
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.decks.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChooseDeck"];
+    
+    Deck *deck = self.decks[indexPath.row];
+    cell.textLabel.text = deck.name;
+    
+    return cell;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self fetchDecks];
+
     
 }
 
