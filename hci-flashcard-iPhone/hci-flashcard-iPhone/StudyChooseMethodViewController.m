@@ -7,7 +7,7 @@
 //
 
 #import "StudyChooseMethodViewController.h"
-
+#import "StudyViewCardsViewController.h"
 #import "Deck.h"
 
 @interface StudyChooseMethodViewController () <UIAlertViewDelegate>
@@ -70,6 +70,14 @@ NSString * const SEGUE_REMINDER = @"studyReminderSegue";
 - (IBAction)viewCardsPressed:(id)sender {
     [self showCardSelectionAlertForTitle:ACTION_VIEW];
     self.segueToPerform = SEGUE_VIEW;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:SEGUE_VIEW]) {
+        //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        StudyViewCardsViewController *viewCardsController = (StudyViewCardsViewController *)segue.destinationViewController;
+        viewCardsController.deckref = self.deckref;
+    }
 }
 
 

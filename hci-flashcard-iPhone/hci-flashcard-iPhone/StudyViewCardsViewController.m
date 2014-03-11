@@ -32,13 +32,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"Self count %d", self.flashcardSet.count);
     return self.flashcardSet.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChooseDeck"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudyViewCards"];
     
     Flashcard *flashcard = self.flashcardSet[indexPath.row];
     cell.textLabel.text = flashcard.front;
@@ -48,18 +49,14 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    if (self.deckref) {
-        NSLog(@"Deck was passed properly");
-        self.flashcardSet = [self.deckref.cards allObjects];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    if (self.deckref) {
+        NSLog(@"Deck was passed properly");
+        self.flashcardSet = [self.deckref.cards allObjects];
+    }
 }
 
 - (void)didReceiveMemoryWarning
