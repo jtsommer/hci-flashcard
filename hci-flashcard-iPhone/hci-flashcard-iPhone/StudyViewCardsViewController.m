@@ -15,11 +15,6 @@
 @property (strong, nonatomic) NSArray *flashcardSet;
 @end
 
-// Strings for card groups
-//NSString * const GROUP_ENTIRE_DECK = @"Entire Deck";
-//NSString * const GROUP_LEARNED = @"Cards I Know";
-//NSString * const GROUP_NOT_LEARNED = @"Cards I Don't Know";
-
 @implementation StudyViewCardsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,8 +49,26 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     if (self.deckref) {
-        NSLog(@"Deck was passed properly");
-        self.flashcardSet = [self.deckref.cards allObjects];
+        if (!self.group) {
+            self.group = GROUP_ENTIRE_DECK;
+            NSLog(@"Group wasn't passed to StudyViewCardsViewController");
+        }
+        NSPredicate *filterGroup;
+        if ([self.group isEqualToString:GROUP_ENTIRE_DECK]) {
+            // Don't filter, group is all cards
+            self.flashcardSet = [self.deckref.cards allObjects];
+        } else if ([self.group isEqualToString:GROUP_NOT_LEARNED]) {
+            filterGroup = [NSPredicate predicateWithFormat:@"learned == NO"];
+        } else {
+            // Group learned
+            filterGroup = [NSPredicate predicateWithFormat:@"learned == YES"];
+        }
+        // Use filtered card set for data
+        if (filterGroup) {
+            self.flashcardSet = [[self.deckref.cards filteredSetUsingPredicate:filterGroup] allObjects];
+        }
+    } else {
+        NSLog(@"Deck wasn't passed to StudyViewCardsViewController");
     }
 }
 

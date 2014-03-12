@@ -13,12 +13,8 @@
 @interface StudyChooseMethodViewController () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *deckNameLabel;
 @property (strong, nonatomic) NSString *segueToPerform;
+@property (strong, nonatomic) NSString *group;
 @end
-
-// Strings for card groups
-NSString * const GROUP_ENTIRE_DECK = @"Entire Deck";
-NSString * const GROUP_LEARNED = @"Cards I Know";
-NSString * const GROUP_NOT_LEARNED = @"Cards I Don't Know";
 
 // Strings for button action selection
 NSString * const ACTION_STUDY = @"Study deck with which cards?";
@@ -77,6 +73,7 @@ NSString * const SEGUE_REMINDER = @"studyReminderSegue";
         //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
         StudyViewCardsViewController *viewCardsController = (StudyViewCardsViewController *)segue.destinationViewController;
         viewCardsController.deckref = self.deckref;
+        viewCardsController.group = self.group;
     }
 }
 
@@ -89,13 +86,14 @@ NSString * const SEGUE_REMINDER = @"studyReminderSegue";
     if ([selection isEqualToString:@"Cancel"]) {
         return;
     }
-    if ([selection isEqualToString:GROUP_ENTIRE_DECK]) {
-        NSLog(@"Do something with entire deck");
-    } else if ([selection isEqualToString:GROUP_LEARNED]) {
-        NSLog(@"Do something with learned cards");
-    } else if ([selection isEqualToString:GROUP_NOT_LEARNED]) {
-        NSLog(@"Do something with unlearned cards");
-    }
+    self.group = selection;
+//    if ([selection isEqualToString:GROUP_ENTIRE_DECK]) {
+//        NSLog(@"Do something with entire deck");
+//    } else if ([selection isEqualToString:GROUP_LEARNED]) {
+//        NSLog(@"Do something with learned cards");
+//    } else if ([selection isEqualToString:GROUP_NOT_LEARNED]) {
+//        NSLog(@"Do something with unlearned cards");
+//    }
     [self performSegueWithIdentifier:self.segueToPerform sender:self];
 }
 
