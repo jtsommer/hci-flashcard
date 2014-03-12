@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Study Choose List View Controller - Sets-->
@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kPm-n6-QKX">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -221,13 +221,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dx3-dF-6Dg" firstAttribute="top" secondItem="kPm-n6-QKX" secondAttribute="bottom" id="5Zn-ac-q9N"/>
-                            <constraint firstAttribute="trailing" secondItem="kPm-n6-QKX" secondAttribute="trailing" id="Ant-cH-fbZ"/>
-                            <constraint firstItem="kPm-n6-QKX" firstAttribute="top" secondItem="xZp-Am-QJJ" secondAttribute="bottom" id="Fsr-R4-JV6"/>
-                            <constraint firstItem="kPm-n6-QKX" firstAttribute="top" secondItem="xZp-Am-QJJ" secondAttribute="bottom" id="GjD-zE-bum"/>
-                            <constraint firstItem="kPm-n6-QKX" firstAttribute="leading" secondItem="Miu-A2-a7U" secondAttribute="leading" id="NmB-HK-mSB"/>
-                            <constraint firstItem="kPm-n6-QKX" firstAttribute="top" secondItem="xZp-Am-QJJ" secondAttribute="bottom" id="g5D-oG-t6E"/>
-                            <constraint firstItem="kPm-n6-QKX" firstAttribute="top" secondItem="xZp-Am-QJJ" secondAttribute="bottom" id="pkc-Kh-QGM"/>
+                            <constraint firstItem="dx3-dF-6Dg" firstAttribute="top" secondItem="kPm-n6-QKX" secondAttribute="bottom" id="5FN-6p-Ovy"/>
+                            <constraint firstAttribute="trailing" secondItem="kPm-n6-QKX" secondAttribute="trailing" id="Zun-Vj-55P"/>
+                            <constraint firstItem="kPm-n6-QKX" firstAttribute="leading" secondItem="Miu-A2-a7U" secondAttribute="leading" id="hzw-di-ieP"/>
+                            <constraint firstItem="kPm-n6-QKX" firstAttribute="top" secondItem="Miu-A2-a7U" secondAttribute="top" id="kFt-7g-aEn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View Cards" id="q6q-QR-R5B"/>
