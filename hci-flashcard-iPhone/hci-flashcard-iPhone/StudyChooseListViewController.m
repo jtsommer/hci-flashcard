@@ -22,10 +22,6 @@
 	[super viewWillAppear:animated];
 	// Load list of decks from DB
     [self fetchDecks];
-    for (int i = 0; i < self.decks.count; i++) {
-        Deck *d = (Deck *) self.decks[i];
-        NSLog(@"Deck Name %@", d.name);
-    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

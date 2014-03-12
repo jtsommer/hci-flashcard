@@ -103,7 +103,6 @@
 
 - (void) saveTextViewsToCard {
     if (self.deckref) {
-        NSLog(@"Deck Found!");
         self.card.front = self.frontCardTextView.text;
         self.card.back = self.backCardTextView.text;
         self.card.deck = self.deckref;
