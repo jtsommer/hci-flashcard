@@ -10,11 +10,12 @@
 
 @interface FlashcardViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
-
+@property (strong, nonatomic) NSNumber *interfaceState;
 @end
 
 const int FLASHCARD_STATE_FRONT = 1;
 const int FLASHCARD_STATE_BACK = 2;
+int currentState = 1;
 
 @implementation FlashcardViewController
 
@@ -31,6 +32,7 @@ const int FLASHCARD_STATE_BACK = 2;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    currentState = FLASHCARD_STATE_FRONT;
 }
 
 #pragma mark Input Actions
@@ -41,7 +43,11 @@ const int FLASHCARD_STATE_BACK = 2;
 
 - (IBAction)handleTap:(UITapGestureRecognizer *)sender {
     if (sender.numberOfTapsRequired == 1) {
-        [self flipToFlashcardBack];
+        if (currentState == FLASHCARD_STATE_FRONT) {
+            [self flipToFlashcardBack];
+        } else if (currentState == FLASHCARD_STATE_BACK) {
+            [self flipToFlashcardFront];
+        }
     }
 }
 
@@ -54,11 +60,13 @@ const int FLASHCARD_STATE_BACK = 2;
 - (void)flipToFlashcardBack {
     [self flipViewToSelf];
     self.textLabel.text = @"changed";
+    currentState = FLASHCARD_STATE_BACK;
 }
 
-- (void)flipToFlascardFront {
+- (void)flipToFlashcardFront {
     [self flipViewToSelf];
     self.textLabel.text = @"Study";
+    currentState = FLASHCARD_STATE_FRONT;
 }
 
 - (void)didReceiveMemoryWarning
