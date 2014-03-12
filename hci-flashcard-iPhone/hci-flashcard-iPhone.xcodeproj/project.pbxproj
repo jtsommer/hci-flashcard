@@ -31,6 +31,8 @@
 		C8058D1D18CEEA90000E7819 /* StudyChooseMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D1C18CEEA90000E7819 /* StudyChooseMethodViewController.m */; };
 		C8058D2418CF7D08000E7819 /* FlashcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D2318CF7D08000E7819 /* FlashcardViewController.m */; };
 		C8058D2918CF8A4F000E7819 /* StudyViewCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D2818CF8A4F000E7819 /* StudyViewCardsViewController.m */; };
+		C84A9FA618D120BC00634BEF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A9FA518D120BC00634BEF /* QuartzCore.framework */; };
+		C878C9DF18D11F8D00E58BF3 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */; };
 		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
 		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
 		C8DA9E6218CD224700DF1356 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80418C618C916420062FF91 /* CoreData.framework */; };
@@ -110,7 +112,10 @@
 		C8058D2318CF7D08000E7819 /* FlashcardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardViewController.m; sourceTree = "<group>"; };
 		C8058D2718CF8A4F000E7819 /* StudyViewCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewCardsViewController.h; sourceTree = "<group>"; };
 		C8058D2818CF8A4F000E7819 /* StudyViewCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyViewCardsViewController.m; sourceTree = "<group>"; };
+		C84A9FA518D120BC00634BEF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C878C9DB18D0F53000E58BF3 /* FlashcardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardConstants.h; sourceTree = "<group>"; };
+		C878C9DD18D11F8D00E58BF3 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		C8AB6EFC18C657FA005B135F /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "Resources/96-book.png"; sourceTree = "<group>"; };
 		C8AB6EFD18C657FA005B135F /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "Resources/179-notepad.png"; sourceTree = "<group>"; };
 		C8DA9EF418CD25D600DF1356 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84A9FA618D120BC00634BEF /* QuartzCore.framework in Frameworks */,
 				C80418C718C916420062FF91 /* CoreData.framework in Frameworks */,
 				756EDD6318C3D63700CAF86C /* CoreGraphics.framework in Frameworks */,
 				756EDD6518C3D63700CAF86C /* UIKit.framework in Frameworks */,
@@ -198,6 +204,7 @@
 		756EDD5418C3D63700CAF86C = {
 			isa = PBXGroup;
 			children = (
+				C878C9DC18D11F8D00E58BF3 /* Toast */,
 				C8DA9EF118CD25D600DF1356 /* MagicalRecord */,
 				756EDD6618C3D63700CAF86C /* hci-flashcard-iPhone */,
 				756EDD8818C3D63800CAF86C /* hci-flashcard-iPhoneTests */,
@@ -219,6 +226,7 @@
 		756EDD5F18C3D63700CAF86C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C84A9FA518D120BC00634BEF /* QuartzCore.framework */,
 				C80418C618C916420062FF91 /* CoreData.framework */,
 				756EDD6018C3D63700CAF86C /* Foundation.framework */,
 				756EDD6218C3D63700CAF86C /* CoreGraphics.framework */,
@@ -319,6 +327,15 @@
 				C8058D2318CF7D08000E7819 /* FlashcardViewController.m */,
 			);
 			name = "Views - Flashcard";
+			sourceTree = "<group>";
+		};
+		C878C9DC18D11F8D00E58BF3 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				C878C9DD18D11F8D00E58BF3 /* UIView+Toast.h */,
+				C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		C8AB6F0018C65808005B135F /* Resources */ = {
@@ -551,6 +568,7 @@
 				C8058D2418CF7D08000E7819 /* FlashcardViewController.m in Sources */,
 				C8DA9F3B18CD25D700DF1356 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				C8DA9F4118CD25D700DF1356 /* MagicalRecord+ErrorHandling.m in Sources */,
+				C878C9DF18D11F8D00E58BF3 /* UIView+Toast.m in Sources */,
 				C8DA9F3F18CD25D700DF1356 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				C8DA9F3518CD25D600DF1356 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				C8058D1A18CED8D4000E7819 /* Flashcard.m in Sources */,

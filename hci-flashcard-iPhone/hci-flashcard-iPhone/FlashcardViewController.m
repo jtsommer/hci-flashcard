@@ -33,6 +33,7 @@ int currentState = 1;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     currentState = FLASHCARD_STATE_FRONT;
+    [self.view makeToast:@"Tap anywhere to see flashcard back" duration:4.0 position:@"top"];
 }
 
 #pragma mark Input Actions
