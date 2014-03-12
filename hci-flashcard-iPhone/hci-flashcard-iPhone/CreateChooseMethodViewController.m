@@ -33,6 +33,7 @@ NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
 	// Do any additional setup after loading the view.
     if (self.deckref) {
         self.deckNameTextField.text = self.deckref.name;
+        self.navigationItem.title = [NSString stringWithFormat:@"Create - %@", self.deckref.name];
         self.deckNameTextField.enabled = NO;
     }
 }

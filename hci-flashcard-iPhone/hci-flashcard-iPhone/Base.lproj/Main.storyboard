@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Study Choose List View Controller - Sets-->
+        <!--Study Choose List View Controller - Study-->
         <scene sceneID="I0e-1s-j4J">
             <objects>
                 <viewController id="NUG-qg-WSo" customClass="StudyChooseListViewController" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Flashcard Set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-26-i0Z">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Flashcard Deck" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-26-i0Z">
                                 <rect key="frame" x="20" y="77" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -77,7 +77,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CoI-26-i0Z" secondAttribute="trailing" constant="20" id="wM6-10-Rnt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sets" id="D7c-Zx-lGE"/>
+                    <navigationItem key="navigationItem" title="Study" id="D7c-Zx-lGE"/>
                     <connections>
                         <outlet property="tableView" destination="W4B-7x-hdt" id="Kuh-IR-1Sb"/>
                     </connections>

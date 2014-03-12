@@ -60,8 +60,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self fetchDecks];
+}
 
-    
+- (void) didMoveToParentViewController:(UIViewController *)parent {
+    if (parent) {
+        // viewDidLoad doesn't get called when coming back off the navigation stack
+        // Fetch decks and refresh the table here so if a new deck was created
+        // it will load properly
+        [self fetchDecks];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)fetchDecks {
