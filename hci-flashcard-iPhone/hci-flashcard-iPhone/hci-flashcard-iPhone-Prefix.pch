@@ -17,4 +17,5 @@
     #define MR_SHORTHAND
     #import "CoreData+MagicalRecord.h"
     #import "FlashcardConstants.h"
+    #import "UIView+Toast.h"
 #endif
