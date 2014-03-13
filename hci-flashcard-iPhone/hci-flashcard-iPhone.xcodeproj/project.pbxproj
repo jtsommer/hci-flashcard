@@ -36,6 +36,7 @@
 		C84A9FAA18D180F200634BEF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A9FA918D180F200634BEF /* Security.framework */; };
 		C84A9FAD18D1822700634BEF /* DropboxConversionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84A9FAC18D1822700634BEF /* DropboxConversionViewController.m */; };
 		C84A9FAF18D1874600634BEF /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A9FAE18D1874600634BEF /* DBChooser.framework */; };
+		C84A9FB318D1AB2A00634BEF /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C84A9FB218D1AB2A00634BEF /* CHCSVParser.m */; };
 		C878C9DF18D11F8D00E58BF3 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */; };
 		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
 		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
@@ -123,6 +124,8 @@
 		C84A9FAB18D1822700634BEF /* DropboxConversionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxConversionViewController.h; sourceTree = "<group>"; };
 		C84A9FAC18D1822700634BEF /* DropboxConversionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxConversionViewController.m; sourceTree = "<group>"; };
 		C84A9FAE18D1874600634BEF /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
+		C84A9FB118D1AB2A00634BEF /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		C84A9FB218D1AB2A00634BEF /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		C878C9DB18D0F53000E58BF3 /* FlashcardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardConstants.h; sourceTree = "<group>"; };
 		C878C9DD18D11F8D00E58BF3 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
@@ -216,6 +219,7 @@
 		756EDD5418C3D63700CAF86C = {
 			isa = PBXGroup;
 			children = (
+				C84A9FB018D1AB2A00634BEF /* CHCSVParser */,
 				C878C9DC18D11F8D00E58BF3 /* Toast */,
 				C8DA9EF118CD25D600DF1356 /* MagicalRecord */,
 				756EDD6618C3D63700CAF86C /* hci-flashcard-iPhone */,
@@ -345,6 +349,15 @@
 				C8058D2318CF7D08000E7819 /* FlashcardViewController.m */,
 			);
 			name = "Views - Flashcard";
+			sourceTree = "<group>";
+		};
+		C84A9FB018D1AB2A00634BEF /* CHCSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				C84A9FB118D1AB2A00634BEF /* CHCSVParser.h */,
+				C84A9FB218D1AB2A00634BEF /* CHCSVParser.m */,
+			);
+			path = CHCSVParser;
 			sourceTree = "<group>";
 		};
 		C878C9DC18D11F8D00E58BF3 /* Toast */ = {
@@ -579,6 +592,7 @@
 				756EDD7118C3D63700CAF86C /* AppDelegate.m in Sources */,
 				C8DA9F3318CD25D600DF1356 /* NSString+MagicalDataImport.m in Sources */,
 				C8DA9F3C18CD25D700DF1356 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				C84A9FB318D1AB2A00634BEF /* CHCSVParser.m in Sources */,
 				C8DA9F3918CD25D700DF1356 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				C8DA9F3118CD25D600DF1356 /* NSObject+MagicalDataImport.m in Sources */,
 				756EDD7718C3D63700CAF86C /* StudyChooseListViewController.m in Sources */,

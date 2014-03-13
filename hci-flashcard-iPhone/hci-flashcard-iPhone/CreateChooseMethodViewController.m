@@ -8,6 +8,7 @@
 
 #import "CreateChooseMethodViewController.h"
 #import "CreateNewCardViewController.h"
+#import "DropboxConversionViewController.h"
 
 @interface CreateChooseMethodViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *deckNameTextField;
@@ -80,9 +81,11 @@ NSString * const CSV_CONVERT_SEGUE = @"csvConvertSegue";
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:TYPE_NEW_CARD_SEGUE]) {
-//        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
         CreateNewCardViewController *newCardController = (CreateNewCardViewController *)segue.destinationViewController;
         newCardController.deckref = self.deckref;
+    } else if ([segue.identifier isEqualToString:CSV_CONVERT_SEGUE]) {
+        DropboxConversionViewController *dropboxController = (DropboxConversionViewController *)segue.destinationViewController;
+        dropboxController.deckref = self.deckref;
     }
 }
 

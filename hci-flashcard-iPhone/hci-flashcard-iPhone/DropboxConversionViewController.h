@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DropboxConversionViewController : UIViewController
+@class Deck;
 
+@interface DropboxConversionViewController : UIViewController
+@property (strong, nonatomic) Deck *deckref;
 @end

@@ -8,6 +8,9 @@
 
 #import "DropboxConversionViewController.h"
 #import <DBChooser/DBChooser.h>
+#import "CHCSVParser.h"
+#import "Deck.h"
+#import "Flashcard.h"
 
 @interface DropboxConversionViewController ()
 
@@ -40,7 +43,23 @@
      {
          if ([results count]) {
              // Process results from Chooser
-             
+             DBChooserResult *result = results[0];
+             NSURL *link = result.link;
+             if ([[link pathExtension] isEqualToString:@"csv"]) {
+                 // Fetch the datafile from dropbox
+                 // This is pretty sketchy, only works on short csv files
+                 NSString *csv = [NSString stringWithContentsOfURL:link encoding:NSUTF8StringEncoding error:nil];
+                 NSArray *rows = [csv CSVComponents];
+                 for (int i = 0; i < rows.count; i++) {
+                     NSArray *row = rows[i];
+                     Flashcard *new = [Flashcard createEntity];
+                     new.front = row[0];
+                     new.back = row[1];
+                     new.deck = self.deckref;
+                 }
+             } else {
+                 [self.navigationController.view makeToast:@"Dropbox imported file must be a .csv file" duration:3.0 position:@"top"];
+             }
          } else {
              // User canceled the action
          }
