@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Deck.h"
 #import "Flashcard.h"
+#import <DBChooser/DBChooser.h>
 
 @implementation AppDelegate
 
@@ -45,6 +46,22 @@
 	}
     return YES;
 }
+
+#pragma mark Dropbox
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(NSString *)source annotation:(id)annotation {
+    if ([[DBChooser defaultChooser] handleOpenURL:url]) {
+        // This was a Chooser response and handleOpenURL automatically ran the
+        // completion block
+        return YES;
+    }
+    
+    return NO;
+    return NO;
+}
+
+#pragma mark
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

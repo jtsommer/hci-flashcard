@@ -33,6 +33,9 @@
 		C8058D2418CF7D08000E7819 /* FlashcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D2318CF7D08000E7819 /* FlashcardViewController.m */; };
 		C8058D2918CF8A4F000E7819 /* StudyViewCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8058D2818CF8A4F000E7819 /* StudyViewCardsViewController.m */; };
 		C84A9FA618D120BC00634BEF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A9FA518D120BC00634BEF /* QuartzCore.framework */; };
+		C84A9FAA18D180F200634BEF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A9FA918D180F200634BEF /* Security.framework */; };
+		C84A9FAD18D1822700634BEF /* DropboxConversionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84A9FAC18D1822700634BEF /* DropboxConversionViewController.m */; };
+		C84A9FAF18D1874600634BEF /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A9FAE18D1874600634BEF /* DBChooser.framework */; };
 		C878C9DF18D11F8D00E58BF3 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */; };
 		C8AB6EFE18C657FA005B135F /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFC18C657FA005B135F /* 96-book.png */; };
 		C8AB6EFF18C657FA005B135F /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C8AB6EFD18C657FA005B135F /* 179-notepad.png */; };
@@ -116,6 +119,10 @@
 		C8058D2718CF8A4F000E7819 /* StudyViewCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewCardsViewController.h; sourceTree = "<group>"; };
 		C8058D2818CF8A4F000E7819 /* StudyViewCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyViewCardsViewController.m; sourceTree = "<group>"; };
 		C84A9FA518D120BC00634BEF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C84A9FA918D180F200634BEF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C84A9FAB18D1822700634BEF /* DropboxConversionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxConversionViewController.h; sourceTree = "<group>"; };
+		C84A9FAC18D1822700634BEF /* DropboxConversionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxConversionViewController.m; sourceTree = "<group>"; };
+		C84A9FAE18D1874600634BEF /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
 		C878C9DB18D0F53000E58BF3 /* FlashcardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardConstants.h; sourceTree = "<group>"; };
 		C878C9DD18D11F8D00E58BF3 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		C878C9DE18D11F8D00E58BF3 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
@@ -182,6 +189,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84A9FAF18D1874600634BEF /* DBChooser.framework in Frameworks */,
+				C84A9FAA18D180F200634BEF /* Security.framework in Frameworks */,
 				C84A9FA618D120BC00634BEF /* QuartzCore.framework in Frameworks */,
 				C80418C718C916420062FF91 /* CoreData.framework in Frameworks */,
 				756EDD6318C3D63700CAF86C /* CoreGraphics.framework in Frameworks */,
@@ -229,6 +238,8 @@
 		756EDD5F18C3D63700CAF86C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C84A9FAE18D1874600634BEF /* DBChooser.framework */,
+				C84A9FA918D180F200634BEF /* Security.framework */,
 				C84A9FA518D120BC00634BEF /* QuartzCore.framework */,
 				C80418C618C916420062FF91 /* CoreData.framework */,
 				756EDD6018C3D63700CAF86C /* Foundation.framework */,
@@ -294,6 +305,8 @@
 				C8058D1318CD6904000E7819 /* CreateChooseMethodViewController.m */,
 				C8058D1518CD72C7000E7819 /* CreateNewCardViewController.h */,
 				C8058D1618CD72C7000E7819 /* CreateNewCardViewController.m */,
+				C84A9FAB18D1822700634BEF /* DropboxConversionViewController.h */,
+				C84A9FAC18D1822700634BEF /* DropboxConversionViewController.m */,
 			);
 			name = "Views - Create";
 			sourceTree = "<group>";
@@ -561,6 +574,7 @@
 				C8DA9F3E18CD25D700DF1356 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C80418D618C9182E0062FF91 /* Deck.m in Sources */,
 				C8DA9F4218CD25D700DF1356 /* MagicalRecord+iCloud.m in Sources */,
+				C84A9FAD18D1822700634BEF /* DropboxConversionViewController.m in Sources */,
 				C8DA9F2F18CD25D600DF1356 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				756EDD7118C3D63700CAF86C /* AppDelegate.m in Sources */,
 				C8DA9F3318CD25D600DF1356 /* NSString+MagicalDataImport.m in Sources */,
@@ -718,6 +732,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jordan.sommers/Dropbox/UCSC/CMPE131/hci-flashcard/hci-flashcard-iPhone",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hci-flashcard-iPhone/hci-flashcard-iPhone-Prefix.pch";
 				INFOPLIST_FILE = "hci-flashcard-iPhone/hci-flashcard-iPhone-Info.plist";
@@ -731,6 +749,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jordan.sommers/Dropbox/UCSC/CMPE131/hci-flashcard/hci-flashcard-iPhone",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hci-flashcard-iPhone/hci-flashcard-iPhone-Prefix.pch";
 				INFOPLIST_FILE = "hci-flashcard-iPhone/hci-flashcard-iPhone-Info.plist";

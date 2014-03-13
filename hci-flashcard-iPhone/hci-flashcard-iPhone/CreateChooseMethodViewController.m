@@ -16,6 +16,7 @@
 
 NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
 NSString * const DRAW_CARD_SEGUE = @"drawNewCardSegue";
+NSString * const CSV_CONVERT_SEGUE = @"csvConvertSegue";
 
 @implementation CreateChooseMethodViewController
 
@@ -57,7 +58,7 @@ NSString * const DRAW_CARD_SEGUE = @"drawNewCardSegue";
 #pragma mark Transition Views
 
 - (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:TYPE_NEW_CARD_SEGUE] || [identifier isEqualToString:DRAW_CARD_SEGUE]) {
+    if ([identifier isEqualToString:TYPE_NEW_CARD_SEGUE] || [identifier isEqualToString:DRAW_CARD_SEGUE] || [identifier isEqualToString:CSV_CONVERT_SEGUE]) {
         if (self.deckref) {
             return YES;
         } else if (self.deckNameTextField.text.length > 0) {
