@@ -78,7 +78,7 @@
 /* Begin PBXFileReference section */
 		70A0AF0418D11FF800A096EB /* StudyReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyReminderViewController.h; sourceTree = "<group>"; };
 		70A0AF0518D11FF800A096EB /* StudyReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyReminderViewController.m; sourceTree = "<group>"; };
-		756EDD5D18C3D63700CAF86C /* hci-flashcard-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hci-flashcard-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		756EDD5D18C3D63700CAF86C /* Flappy Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flappy Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		756EDD6018C3D63700CAF86C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		756EDD6218C3D63700CAF86C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		756EDD6418C3D63700CAF86C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -220,7 +220,7 @@
 		756EDD5E18C3D63700CAF86C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				756EDD5D18C3D63700CAF86C /* hci-flashcard-iPhone.app */,
+				756EDD5D18C3D63700CAF86C /* Flappy Card.app */,
 				756EDD8118C3D63800CAF86C /* hci-flashcard-iPhoneTests.xctest */,
 			);
 			name = Products;
@@ -470,7 +470,7 @@
 			);
 			name = "hci-flashcard-iPhone";
 			productName = "hci-flashcard-iPhone";
-			productReference = 756EDD5D18C3D63700CAF86C /* hci-flashcard-iPhone.app */;
+			productReference = 756EDD5D18C3D63700CAF86C /* Flappy Card.app */;
 			productType = "com.apple.product-type.application";
 		};
 		756EDD8018C3D63800CAF86C /* hci-flashcard-iPhoneTests */ = {
@@ -721,7 +721,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hci-flashcard-iPhone/hci-flashcard-iPhone-Prefix.pch";
 				INFOPLIST_FILE = "hci-flashcard-iPhone/hci-flashcard-iPhone-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Flappy Card";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -734,7 +734,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hci-flashcard-iPhone/hci-flashcard-iPhone-Prefix.pch";
 				INFOPLIST_FILE = "hci-flashcard-iPhone/hci-flashcard-iPhone-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Flappy Card";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
