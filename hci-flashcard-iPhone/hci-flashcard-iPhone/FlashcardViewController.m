@@ -52,10 +52,49 @@ int currentState = 1;
     }
 }
 
+- (IBAction)handleSwipe:(UISwipeGestureRecognizer *)sender {
+    if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"Swipe Left");
+        [self slideViewToSelf:UIViewAnimationTransitionFlipFromRight];
+        self.textLabel.text = @"Left";
+    } else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+        NSLog(@"Swipe Right");
+        [self slideViewToSelf:UIViewAnimationTransitionFlipFromLeft];
+        self.textLabel.text = @"Right";
+    }
+}
+
 #pragma mark Flashcard Methods
 
 - (void)flipViewToSelf {
-    [UIView transitionWithView:self.view duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft animations: nil completion:nil];
+    [UIView transitionWithView:self.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations: nil completion:nil];
+}
+
+- (void)slideViewToSelf: (UIViewAnimationTransition) direction {
+    
+    UIGraphicsBeginImageContext(self.view.window.frame.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height)];
+    iv.image = image;
+    UIWindow *w = self.view.window;
+    [w insertSubview:iv belowSubview:self.view];
+    // Switch based on direction
+    CGFloat newX;
+    if (direction == UIViewAnimationTransitionFlipFromLeft) {
+        newX = -self.view.frame.size.width;
+    } else {
+        newX = self.view.frame.size.width;
+    }
+    self.view.frame = CGRectMake(newX, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        iv.frame = CGRectMake(-newX, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+        self.view.frame = CGRectMake(0, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    } completion:^(BOOL finished) {
+        [iv removeFromSuperview];
+    }];
+
 }
 
 - (void)flipToFlashcardBack {

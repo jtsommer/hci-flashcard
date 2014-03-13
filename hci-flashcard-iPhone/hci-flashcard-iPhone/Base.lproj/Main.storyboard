@@ -313,6 +313,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="cwz-Ll-BBE" appends="YES" id="I2C-GJ-YBg"/>
+                            <outletCollection property="gestureRecognizers" destination="0Lw-4f-Oz3" appends="YES" id="dsH-eJ-WWK"/>
+                            <outletCollection property="gestureRecognizers" destination="yK3-Sh-zvg" appends="YES" id="IjY-kt-tHu"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="lqQ-Da-JZ0"/>
@@ -326,6 +328,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <action selector="handleTap:" destination="rPo-qw-pkS" id="ZsM-jA-APx"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="0Lw-4f-Oz3">
+                    <connections>
+                        <action selector="handleSwipe:" destination="rPo-qw-pkS" id="9To-uV-pPR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="yK3-Sh-zvg">
+                    <connections>
+                        <action selector="handleSwipe:" destination="rPo-qw-pkS" id="qxm-lz-Qzu"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2283" y="-819"/>
         </scene>
