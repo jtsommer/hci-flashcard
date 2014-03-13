@@ -5,6 +5,7 @@ Toast
 Version 2.2
 
 Copyright (c) 2013 Charles Scalesse.
+https://github.com/scalessec/toast
  
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the

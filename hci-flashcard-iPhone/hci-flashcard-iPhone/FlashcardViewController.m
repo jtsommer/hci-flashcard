@@ -111,6 +111,8 @@ FlashcardStateIdentifier currentState;
     [UIView transitionWithView:self.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations: nil completion:nil];
 }
 
+
+// Huge thanks to http://stackoverflow.com/q/9055465/3274404 on which this function was based
 - (void)slideViewToSelf: (UIViewAnimationTransition) direction {
     
     UIGraphicsBeginImageContext(self.view.window.frame.size);
