@@ -47,17 +47,15 @@
 - (IBAction)buttonPressed:(id)sender {
     NSString *deckname = self.deckref.name;
     NSDate *selected = [_datePicker date];
-
-    NSString *message = [[NSString alloc] initWithFormat:@"date & time selected: %@", selected];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Date and Time selected" message:message delegate:nil cancelButtonTitle:@"sure" otherButtonTitles: nil];
-    
+    // Setup Local Notification
     UILocalNotification *notification = [[UILocalNotification alloc]init];
     [notification setAlertBody:[NSString stringWithFormat:@"Reminder to study %@", deckname]];
     [notification setFireDate:selected];
     [notification setTimeZone:[NSTimeZone defaultTimeZone ]];
     [[UIApplication sharedApplication] setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
-
-    [alert show];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController.view makeToast:[NSString stringWithFormat:@"Set reminder for deck %@", deckname] duration:2 position:@"center"];
 }
 @end
