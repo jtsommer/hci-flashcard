@@ -8,6 +8,7 @@
 
 #import "StudyChooseMethodViewController.h"
 #import "StudyViewCardsViewController.h"
+#import "FlashcardViewController.h"
 #import "StudyReminderViewController.h"
 #import "Deck.h"
 
@@ -71,14 +72,17 @@ NSString * const SEGUE_REMINDER = @"studyReminderSegue";
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:SEGUE_VIEW]) {
-        //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
         StudyViewCardsViewController *viewCardsController = (StudyViewCardsViewController *)segue.destinationViewController;
         viewCardsController.deckref = self.deckref;
         viewCardsController.group = self.group;
     } else if ([segue.identifier isEqualToString:SEGUE_REMINDER]) {
         StudyReminderViewController *viewCardsController = (StudyReminderViewController *)segue.destinationViewController;
         viewCardsController.deckref = self.deckref;
+    } else if ([segue.identifier isEqualToString:SEGUE_STUDY]) {
+        FlashcardViewController *flashcardController = (FlashcardViewController *)segue.destinationViewController;
+        flashcardController.deckref = self.deckref;
     }
+        
 }
 
 

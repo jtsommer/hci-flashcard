@@ -7,15 +7,20 @@
 //
 
 #import "FlashcardViewController.h"
+#import "Deck.h"
+#import "Flashcard.h"
 
 @interface FlashcardViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (strong, nonatomic) NSNumber *interfaceState;
+@property (strong, nonatomic) NSArray *flashcardSet;
+@property (strong, nonatomic) Flashcard *currentCard;
 @end
 
 const int FLASHCARD_STATE_FRONT = 1;
 const int FLASHCARD_STATE_BACK = 2;
 int currentState = 1;
+int currentIndex = 0;
 
 @implementation FlashcardViewController
 
@@ -32,8 +37,38 @@ int currentState = 1;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    if (self.deckref) {
+        if (!self.group) {
+            self.group = GROUP_ENTIRE_DECK;
+            NSLog(@"Group wasn't passed to FlashcardViewController");
+        }
+        NSPredicate *filterGroup;
+        if ([self.group isEqualToString:GROUP_ENTIRE_DECK]) {
+            // Don't filter, group is all cards
+            self.flashcardSet = [self.deckref.cards allObjects];
+        } else if ([self.group isEqualToString:GROUP_NOT_LEARNED]) {
+            filterGroup = [NSPredicate predicateWithFormat:@"learned == NO"];
+        } else {
+            // Group learned
+            filterGroup = [NSPredicate predicateWithFormat:@"learned == YES"];
+        }
+        // Use filtered card set for data
+        if (filterGroup) {
+            self.flashcardSet = [[self.deckref.cards filteredSetUsingPredicate:filterGroup] allObjects];
+        }
+    } else {
+        NSLog(@"Deck wasn't passed to StudyViewCardsViewController");
+    }
+    
+    if (self.flashcardSet.count > 0) {
+        currentIndex = 0;
+        self.currentCard = self.flashcardSet[currentIndex];
+        self.textLabel.text = self.currentCard.front;
+    }
+    
     currentState = FLASHCARD_STATE_FRONT;
-    [self.view makeToast:@"Tap anywhere to see flashcard back" duration:4.0 position:@"top"];
+    [self.view makeToast:@"Tap anywhere to see flashcard back" duration:3.0 position:@"top"];
 }
 
 #pragma mark Input Actions
@@ -99,13 +134,17 @@ int currentState = 1;
 
 - (void)flipToFlashcardBack {
     [self flipViewToSelf];
-    self.textLabel.text = @"changed";
+    if (self.currentCard) {
+        self.textLabel.text = self.currentCard.back;
+    }
     currentState = FLASHCARD_STATE_BACK;
 }
 
 - (void)flipToFlashcardFront {
     [self flipViewToSelf];
-    self.textLabel.text = @"Study";
+    if (self.currentCard) {
+        self.textLabel.text = self.currentCard.front;
+    }
     currentState = FLASHCARD_STATE_FRONT;
 }
 

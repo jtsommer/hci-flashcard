@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlashcardViewController : UIViewController
+@class Deck;
 
+@interface FlashcardViewController : UIViewController
+@property (strong, nonatomic) Deck *deckref;
+@property (strong, nonatomic) NSString *group;
 @end
