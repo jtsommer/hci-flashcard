@@ -11,7 +11,21 @@
 @class Flashcard;
 @class Deck;
 
-@interface CreateDrawCardViewController : UIViewController <UITextViewDelegate>
+@interface CreateDrawCardViewController : UIViewController  {
+    CGPoint lastPoint;
+    CGFloat mark;
+    CGFloat into;
+    CGFloat black;
+    CGFloat brush;
+    CGFloat opacity;
+    BOOL mouseSwiped;
+    
+}
+
+@property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+
+
 @property (strong, nonatomic) Flashcard *card;
 @property (strong, nonatomic) NSString *deckName;
 @property (strong, nonatomic) Deck *deckref;
