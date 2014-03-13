@@ -754,10 +754,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2066" y="502"/>
         </scene>
-        <!--View Controller - Draw Card-->
+        <!--Create Draw Card View Controller - Draw Card-->
         <scene sceneID="Il9-bJ-xcg">
             <objects>
-                <viewController id="b0D-zI-GC3" sceneMemberID="viewController">
+                <viewController id="b0D-zI-GC3" customClass="CreateDrawCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L3u-RR-4nx"/>
                         <viewControllerLayoutGuide type="bottom" id="A9R-dr-CJm"/>
@@ -766,30 +766,29 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M23-6j-cxY">
-                                <rect key="frame" x="16" y="486" width="140" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M23-6j-cxY">
+                                <rect key="frame" x="20" y="445" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="Ow6-0t-Mbl"/>
-                                </constraints>
                                 <state key="normal" title="Create Another">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="createPressed:" destination="Qtp-Vm-8rv" eventType="touchUpInside" id="0UU-Ff-lnC"/>
+                                    <action selector="createPressed:" destination="b0D-zI-GC3" eventType="touchUpInside" id="zFm-fO-kt9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-If-gTp">
-                                <rect key="frame" x="164" y="486" width="140" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-If-gTp">
+                                <rect key="frame" x="168" y="445" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save &amp; Return">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="savePressed:" destination="b0D-zI-GC3" eventType="touchUpInside" id="bcq-nR-BL8"/>
                                     <action selector="savePressed:" destination="Qtp-Vm-8rv" eventType="touchUpInside" id="oEF-gt-5dP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eN-os-B0L" colorLabel="IBBuiltInLabel-Green">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eN-os-B0L" colorLabel="IBBuiltInLabel-Green">
                                 <rect key="frame" x="133" y="184" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21386436950000001" green="0.61370584240000003" blue="0.43343999989999998" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
@@ -797,72 +796,64 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="draw:" destination="b0D-zI-GC3" eventType="touchUpInside" id="PWE-xW-Kys"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-Ls-aOV">
-                                <rect key="frame" x="239" y="184" width="61" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-Ls-aOV">
+                                <rect key="frame" x="246" y="184" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61370584240000003" green="0.12808808290000001" blue="0.19433377199999999" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Erase">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="erase:" destination="b0D-zI-GC3" eventType="touchUpInside" id="95w-25-YEo"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Front" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LA-Xt-t23">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LA-Xt-t23">
                                 <rect key="frame" x="20" y="69" width="280" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="OCP-jp-2QO"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLx-EG-Rx8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLx-EG-Rx8">
                                 <rect key="frame" x="20" y="187" width="86" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Front side text goes here..." translatesAutoresizingMaskIntoConstraints="NO" id="Hyg-mM-72Y">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Front side text goes here..." translatesAutoresizingMaskIntoConstraints="NO" id="Hyg-mM-72Y">
                                 <rect key="frame" x="20" y="99" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="diX-V3-KEW"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zy-YK-UbB">
-                                <rect key="frame" x="20" y="222" width="280" height="256"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8OC-Mv-dbp" customClass="UIImageView">
+                                <rect key="frame" x="20" y="222" width="280" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8r-DE-uOL" customClass="UIImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="215"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.11" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2LA-Xt-t23" firstAttribute="width" secondItem="rLx-EG-Rx8" secondAttribute="width" id="7Wa-e8-vNG"/>
-                            <constraint firstItem="TQ2-Ls-aOV" firstAttribute="width" secondItem="0eN-os-B0L" secondAttribute="width" id="7s0-E5-1Zj"/>
-                            <constraint firstItem="Hyg-mM-72Y" firstAttribute="leading" secondItem="rLx-EG-Rx8" secondAttribute="leading" id="8W8-gF-tES"/>
-                            <constraint firstItem="rLx-EG-Rx8" firstAttribute="top" secondItem="Hyg-mM-72Y" secondAttribute="bottom" constant="8" symbolic="YES" id="Btz-NP-2gy"/>
-                            <constraint firstItem="0eN-os-B0L" firstAttribute="width" secondItem="M23-6j-cxY" secondAttribute="width" id="Gwm-AR-0mx"/>
-                            <constraint firstItem="2LA-Xt-t23" firstAttribute="height" secondItem="rLx-EG-Rx8" secondAttribute="height" id="H9N-rH-7aM"/>
-                            <constraint firstItem="TQ2-Ls-aOV" firstAttribute="top" secondItem="0eN-os-B0L" secondAttribute="top" id="HW1-HJ-AMM"/>
-                            <constraint firstItem="Qh1-If-gTp" firstAttribute="leading" secondItem="M23-6j-cxY" secondAttribute="trailing" constant="8" symbolic="YES" id="HZh-Ot-Y9j"/>
-                            <constraint firstItem="Hyg-mM-72Y" firstAttribute="leading" secondItem="2LA-Xt-t23" secondAttribute="leading" id="JyK-dU-Iku"/>
-                            <constraint firstItem="A9R-dr-CJm" firstAttribute="top" secondItem="M23-6j-cxY" secondAttribute="bottom" constant="20" symbolic="YES" id="L74-lI-aG4"/>
-                            <constraint firstItem="Qh1-If-gTp" firstAttribute="trailing" secondItem="TQ2-Ls-aOV" secondAttribute="trailing" constant="-1" id="MlA-he-pcd"/>
-                            <constraint firstItem="M23-6j-cxY" firstAttribute="width" secondItem="Qh1-If-gTp" secondAttribute="width" id="Ryn-Ms-8B3"/>
-                            <constraint firstItem="Qh1-If-gTp" firstAttribute="top" secondItem="M23-6j-cxY" secondAttribute="top" id="c7D-U0-64L"/>
-                            <constraint firstItem="0eN-os-B0L" firstAttribute="top" secondItem="L3u-RR-4nx" secondAttribute="bottom" constant="8" id="cA1-5O-zgW"/>
-                            <constraint firstItem="0eN-os-B0L" firstAttribute="leading" secondItem="M23-6j-cxY" secondAttribute="leading" id="fyc-r4-m1W"/>
-                            <constraint firstAttribute="trailing" secondItem="Qh1-If-gTp" secondAttribute="trailing" constant="16" id="gNe-Ca-6t2"/>
-                            <constraint firstItem="Hyg-mM-72Y" firstAttribute="top" secondItem="2LA-Xt-t23" secondAttribute="bottom" constant="8" symbolic="YES" id="goe-RO-Y11"/>
-                            <constraint firstItem="M23-6j-cxY" firstAttribute="leading" secondItem="q9e-u4-a2g" secondAttribute="leading" constant="16" id="qqW-U8-8EN"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Draw Card" id="XUg-Yx-LdR"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="frontCardTextView" destination="Hyg-mM-72Y" id="keD-So-iYY"/>
+                        <outlet property="mainImage" destination="Y8r-DE-uOL" id="R5G-ia-MXl"/>
+                        <outlet property="tempDrawImage" destination="8OC-Mv-dbp" id="lLC-2q-pfX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ai-Iz-p4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
