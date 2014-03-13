@@ -15,6 +15,7 @@
 @end
 
 NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
+NSString * const DRAW_CARD_SEGUE = @"drawNewCardSegue";
 
 @implementation CreateChooseMethodViewController
 
@@ -56,7 +57,7 @@ NSString * const TYPE_NEW_CARD_SEGUE = @"typeNewCardSegue";
 #pragma mark Transition Views
 
 - (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:TYPE_NEW_CARD_SEGUE]) {
+    if ([identifier isEqualToString:TYPE_NEW_CARD_SEGUE] || [identifier isEqualToString:DRAW_CARD_SEGUE]) {
         if (self.deckref) {
             return YES;
         } else if (self.deckNameTextField.text.length > 0) {
