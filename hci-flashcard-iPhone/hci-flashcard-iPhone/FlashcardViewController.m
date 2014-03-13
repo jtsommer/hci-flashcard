@@ -17,10 +17,14 @@
 @property (strong, nonatomic) Flashcard *currentCard;
 @end
 
-const int FLASHCARD_STATE_FRONT = 1;
-const int FLASHCARD_STATE_BACK = 2;
-int currentState = 1;
 int currentIndex = 0;
+
+typedef NS_ENUM(NSInteger, FlashcardStateIdentifier) {
+    FlashcardStateFront,
+    FlashcardStateBack
+};
+
+FlashcardStateIdentifier currentState;
 
 @implementation FlashcardViewController
 
@@ -67,7 +71,7 @@ int currentIndex = 0;
         self.textLabel.text = self.currentCard.front;
     }
     
-    currentState = FLASHCARD_STATE_FRONT;
+    currentState = FlashcardStateFront;
     [self.view makeToast:@"Tap anywhere to see flashcard back" duration:3.0 position:@"top"];
 }
 
@@ -79,9 +83,9 @@ int currentIndex = 0;
 
 - (IBAction)handleTap:(UITapGestureRecognizer *)sender {
     if (sender.numberOfTapsRequired == 1) {
-        if (currentState == FLASHCARD_STATE_FRONT) {
+        if (currentState == FlashcardStateFront) {
             [self flipToFlashcardBack];
-        } else if (currentState == FLASHCARD_STATE_BACK) {
+        } else if (currentState == FlashcardStateBack) {
             [self flipToFlashcardFront];
         }
     }
@@ -89,13 +93,11 @@ int currentIndex = 0;
 
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)sender {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-        NSLog(@"Swipe Left");
         [self slideViewToSelf:UIViewAnimationTransitionFlipFromRight];
-        self.textLabel.text = @"Left";
+        [self nextCard];
     } else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        NSLog(@"Swipe Right");
         [self slideViewToSelf:UIViewAnimationTransitionFlipFromLeft];
-        self.textLabel.text = @"Right";
+        [self nextCard];
     }
 }
 
@@ -132,20 +134,56 @@ int currentIndex = 0;
 
 }
 
+- (void)updateFlashcardCurrentState {
+    [self updateFlashcardForState:currentState];
+}
+
+- (void)updateFlashcardForState:(FlashcardStateIdentifier)state {
+    if (self.currentCard) {
+        if (state == FlashcardStateFront) {
+            self.textLabel.text = self.currentCard.front;
+        } else if (state == FlashcardStateBack) {
+            self.textLabel.text = self.currentCard.back;
+        }
+    }
+}
+
 - (void)flipToFlashcardBack {
     [self flipViewToSelf];
-    if (self.currentCard) {
-        self.textLabel.text = self.currentCard.back;
-    }
-    currentState = FLASHCARD_STATE_BACK;
+    currentState = FlashcardStateBack;
+    [self updateFlashcardCurrentState];
 }
 
 - (void)flipToFlashcardFront {
     [self flipViewToSelf];
-    if (self.currentCard) {
-        self.textLabel.text = self.currentCard.front;
+    currentState = FlashcardStateFront;
+    [self updateFlashcardCurrentState];
+}
+
+- (void)nextCard {
+    // Always flip to front when switching cards
+    currentState = FlashcardStateFront;
+    currentIndex++;
+    if (currentIndex >= self.flashcardSet.count) {
+        currentIndex = 0;
     }
-    currentState = FLASHCARD_STATE_FRONT;
+    self.currentCard = self.flashcardSet[currentIndex];
+    [self updateFlashcardCurrentState];
+}
+
+- (void)previousCard {
+    // Always flip to front when switching cards
+    currentState = FlashcardStateFront;
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = self.flashcardSet.count - 1;
+        // No cards case, don't let it freak out with a negative index
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        }
+    }
+    self.currentCard = self.flashcardSet[currentIndex];
+    [self updateFlashcardCurrentState];
 }
 
 - (void)didReceiveMemoryWarning
