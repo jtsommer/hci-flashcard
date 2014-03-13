@@ -18,6 +18,7 @@
 @end
 
 NSInteger currentIndex = 0;
+NSInteger tutorial = 1;
 
 typedef NS_ENUM(NSInteger, FlashcardStateIdentifier) {
     FlashcardStateFront,
@@ -173,6 +174,10 @@ FlashcardStateIdentifier currentState;
     [self flipViewToSelf];
     currentState = FlashcardStateBack;
     [self updateFlashcardCurrentState];
+    if (tutorial) {
+        tutorial = 0;
+        [self.view makeToast:@"Swipe to change cards" duration:3.0 position:@"top"];
+    }
 }
 
 - (void)flipToFlashcardFront {
