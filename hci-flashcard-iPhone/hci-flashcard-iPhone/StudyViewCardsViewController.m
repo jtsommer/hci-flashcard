@@ -12,7 +12,7 @@
 
 @interface StudyViewCardsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *flashcardSet;
+@property (strong, nonatomic) NSMutableArray *flashcardSet;
 @end
 
 @implementation StudyViewCardsViewController
@@ -26,8 +26,9 @@
     return self;
 }
 
+#pragma mark Table View
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Self count %d", self.flashcardSet.count);
     return self.flashcardSet.count;
 }
 
@@ -44,6 +45,48 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete flashcard from set
+        Flashcard *flashcard = self.flashcardSet[indexPath.row];
+        [self.flashcardSet removeObjectAtIndex:indexPath.row];
+        [flashcard deleteEntity];
+        [tableView reloadData];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+    }
+}
+
+#pragma mark Button Actions
+
+- (void) editPressed {
+    [self.tableView setEditing:YES animated:YES];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing)];
+}
+
+- (void) doneEditing {
+    [self.tableView setEditing:NO animated:YES];
+    if (self.flashcardSet.count > 0) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editPressed)];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,7 +99,7 @@
         NSPredicate *filterGroup;
         if ([self.group isEqualToString:GROUP_ENTIRE_DECK]) {
             // Don't filter, group is all cards
-            self.flashcardSet = [self.deckref.cards allObjects];
+            self.flashcardSet = [[self.deckref.cards allObjects] mutableCopy];
         } else if ([self.group isEqualToString:GROUP_NOT_LEARNED]) {
             filterGroup = [NSPredicate predicateWithFormat:@"learned == NO"];
         } else {
@@ -65,7 +108,10 @@
         }
         // Use filtered card set for data
         if (filterGroup) {
-            self.flashcardSet = [[self.deckref.cards filteredSetUsingPredicate:filterGroup] allObjects];
+            self.flashcardSet = [[[self.deckref.cards filteredSetUsingPredicate:filterGroup] allObjects] mutableCopy];
+        }
+        if (self.flashcardSet.count > 0) {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editPressed)];
         }
     } else {
         NSLog(@"Deck wasn't passed to StudyViewCardsViewController");
