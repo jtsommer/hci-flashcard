@@ -315,14 +315,31 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="donePressed:" destination="rPo-qw-pkS" eventType="touchUpInside" id="wp8-xD-VaP"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-82-hkt">
+                                <rect key="frame" x="20" y="520" width="180" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="tgF-gh-300"/>
+                                    <constraint firstAttribute="height" constant="28" id="zpi-fo-0ip"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Not Learned"/>
+                                    <segment title="Learned"/>
+                                </segments>
+                                <connections>
+                                    <action selector="learnedControlValueChanged:" destination="rPo-qw-pkS" eventType="valueChanged" id="VJR-mF-zUT"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8j2-bb-X9S" secondAttribute="trailing" constant="20" id="2Pk-u2-b7H"/>
                             <constraint firstItem="8j2-bb-X9S" firstAttribute="top" secondItem="F89-br-UMR" secondAttribute="bottom" constant="8" id="Cwr-u6-a3Z"/>
+                            <constraint firstItem="xdO-82-hkt" firstAttribute="leading" secondItem="FWB-aE-0b5" secondAttribute="leading" constant="20" id="KYU-ij-KhS"/>
                             <constraint firstItem="8j2-bb-X9S" firstAttribute="leading" secondItem="FWB-aE-0b5" secondAttribute="leading" constant="20" id="QXl-KP-OH7"/>
                             <constraint firstItem="F89-br-UMR" firstAttribute="top" secondItem="FSg-hn-avI" secondAttribute="bottom" constant="16" id="Rwp-E8-ZIi"/>
+                            <constraint firstItem="LlZ-TO-PAs" firstAttribute="top" secondItem="xdO-82-hkt" secondAttribute="bottom" constant="20" id="Yb3-mL-Fmd"/>
                             <constraint firstItem="LlZ-TO-PAs" firstAttribute="top" secondItem="8j2-bb-X9S" secondAttribute="bottom" id="aD6-H3-UIJ"/>
                             <constraint firstAttribute="trailing" secondItem="F89-br-UMR" secondAttribute="trailing" constant="20" id="q2c-sn-TTw"/>
                         </constraints>
@@ -334,6 +351,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <navigationItem key="navigationItem" id="lqQ-Da-JZ0"/>
                     <connections>
+                        <outlet property="learnedControl" destination="xdO-82-hkt" id="v49-0R-duT"/>
                         <outlet property="textLabel" destination="8j2-bb-X9S" id="8M0-SX-6RP"/>
                     </connections>
                 </viewController>

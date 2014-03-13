@@ -12,6 +12,7 @@
 
 @interface FlashcardViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *learnedControl;
 @property (strong, nonatomic) NSNumber *interfaceState;
 @property (strong, nonatomic) NSArray *flashcardSet;
 @end
@@ -21,6 +22,11 @@ NSInteger currentIndex = 0;
 typedef NS_ENUM(NSInteger, FlashcardStateIdentifier) {
     FlashcardStateFront,
     FlashcardStateBack
+};
+
+typedef NS_ENUM(NSInteger, LearnedControlState) {
+    LearnedControlLearned = 0,
+    LearnedControlNotLearned = 1
 };
 
 FlashcardStateIdentifier currentState;
@@ -73,6 +79,7 @@ FlashcardStateIdentifier currentState;
             self.currentCard = self.flashcardSet[currentIndex];
         }
         self.textLabel.text = self.currentCard.front;
+        self.learnedControl.selectedSegmentIndex = self.currentCard.learned.integerValue;
     }
     
     currentState = FlashcardStateFront;
@@ -83,6 +90,13 @@ FlashcardStateIdentifier currentState;
 
 - (IBAction)donePressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)learnedControlValueChanged:(id)sender {
+    if (self.currentCard) {
+        self.currentCard.learned = [NSNumber numberWithInteger:self.learnedControl.selectedSegmentIndex];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    }
 }
 
 - (IBAction)handleTap:(UITapGestureRecognizer *)sender {
@@ -151,6 +165,7 @@ FlashcardStateIdentifier currentState;
         } else if (state == FlashcardStateBack) {
             self.textLabel.text = self.currentCard.back;
         }
+        self.learnedControl.selectedSegmentIndex = self.currentCard.learned.integerValue;
     }
 }
 
