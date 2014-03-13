@@ -9,6 +9,7 @@
 #import "StudyViewCardsViewController.h"
 #import "Deck.h"
 #import "Flashcard.h"
+#import "FlashcardViewController.h"
 
 @interface StudyViewCardsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -69,7 +70,18 @@
         [self.flashcardSet removeObjectAtIndex:indexPath.row];
         [flashcard deleteEntity];
         [tableView reloadData];
-        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"viewCardsFlashcardSegue"]) {
+        FlashcardViewController *flashcardController = (FlashcardViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Flashcard *card = self.flashcardSet[indexPath.row];
+        flashcardController.currentCard = card;
+        flashcardController.deckref = self.deckref;
+        flashcardController.group = self.group;
     }
 }
 

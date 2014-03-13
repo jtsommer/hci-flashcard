@@ -14,10 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (strong, nonatomic) NSNumber *interfaceState;
 @property (strong, nonatomic) NSArray *flashcardSet;
-@property (strong, nonatomic) Flashcard *currentCard;
 @end
 
-int currentIndex = 0;
+NSInteger currentIndex = 0;
 
 typedef NS_ENUM(NSInteger, FlashcardStateIdentifier) {
     FlashcardStateFront,
@@ -66,8 +65,13 @@ FlashcardStateIdentifier currentState;
     }
     
     if (self.flashcardSet.count > 0) {
-        currentIndex = 0;
-        self.currentCard = self.flashcardSet[currentIndex];
+        if (self.currentCard) {
+            // A start card was passed into the view
+            currentIndex = [self.flashcardSet indexOfObject:self.currentCard];
+        } else {
+            currentIndex = 0;
+            self.currentCard = self.flashcardSet[currentIndex];
+        }
         self.textLabel.text = self.currentCard.front;
     }
     

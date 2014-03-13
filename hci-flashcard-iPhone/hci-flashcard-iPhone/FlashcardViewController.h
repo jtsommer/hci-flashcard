@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class Deck;
+@class Flashcard;
 
 @interface FlashcardViewController : UIViewController
 @property (strong, nonatomic) Deck *deckref;
 @property (strong, nonatomic) NSString *group;
+@property (strong, nonatomic) Flashcard *currentCard;
 @end

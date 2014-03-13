@@ -254,6 +254,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rPo-qw-pkS" kind="modal" identifier="viewCardsFlashcardSegue" modalTransitionStyle="flipHorizontal" id="KVP-K2-lnT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -351,7 +354,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2283" y="-819"/>
+            <point key="canvasLocation" x="2474" y="-819"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uy2-zy-kWl">
@@ -795,5 +798,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8sw-8l-zpg"/>
+        <segue reference="KVP-K2-lnT"/>
     </inferredMetricsTieBreakers>
 </document>
