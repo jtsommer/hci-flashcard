@@ -81,6 +81,7 @@ NSString * const SEGUE_REMINDER = @"studyReminderSegue";
     } else if ([segue.identifier isEqualToString:SEGUE_STUDY]) {
         FlashcardViewController *flashcardController = (FlashcardViewController *)segue.destinationViewController;
         flashcardController.deckref = self.deckref;
+        flashcardController.group = self.group;
     }
         
 }

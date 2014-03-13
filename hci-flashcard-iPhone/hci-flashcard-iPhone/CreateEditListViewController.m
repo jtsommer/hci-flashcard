@@ -37,7 +37,6 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"createDeckSelected"]) {
-        //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
         CreateChooseMethodViewController *chooseMethodController = (CreateChooseMethodViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Deck *deck = self.decks[indexPath.row];
