@@ -35,7 +35,7 @@
     
     Deck *deck = self.decks[indexPath.row];
     cell.textLabel.text = deck.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Cards: %d", deck.cards.count];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Cards: %lu", (unsigned long)deck.cards.count];
     
     return cell;
     

@@ -77,7 +77,7 @@
     // Select all text of the given text field, defers one run loop to activate after insertion
     // Thanks http://stackoverflow.com/a/19065568/3274404
     [textView performSelector:@selector(selectAll:) withObject:self afterDelay:0.0];
-    int i = [self.textViews indexOfObject:textView];
+    NSInteger i = [self.textViews indexOfObject:textView];
     if (i < [self.textViews count] - 1) {
         self.navigationItem.rightBarButtonItem = self.nextButton;
     } else {
