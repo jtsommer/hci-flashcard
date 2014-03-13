@@ -399,8 +399,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uea-iK-VYE">
-                                <rect key="frame" x="19" y="236" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uea-iK-VYE">
+                                <rect key="frame" x="20" y="236" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="B">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -445,7 +445,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Placeholder" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="qot-il-EDA">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="qot-il-EDA">
                                 <rect key="frame" x="60" y="390" width="228" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -475,6 +475,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="Uea-iK-VYE" firstAttribute="centerY" secondItem="gLH-bO-TfX" secondAttribute="centerY" id="dbd-43-cSz"/>
                             <constraint firstItem="Ayn-UL-6va" firstAttribute="leading" secondItem="Lwv-l1-42a" secondAttribute="leading" constant="20" id="dgq-md-pR3"/>
                             <constraint firstItem="58D-lo-EW6" firstAttribute="height" secondItem="eoI-uY-BSQ" secondAttribute="height" id="eOV-L7-PTz"/>
+                            <constraint firstItem="qot-il-EDA" firstAttribute="width" secondItem="eoI-uY-BSQ" secondAttribute="width" id="kHO-js-GlI"/>
                             <constraint firstItem="gLH-bO-TfX" firstAttribute="leading" secondItem="eoI-uY-BSQ" secondAttribute="leading" id="l0d-KY-0Lu"/>
                             <constraint firstItem="qot-il-EDA" firstAttribute="top" secondItem="58D-lo-EW6" secondAttribute="bottom" constant="8" id="oFj-sj-ZNo"/>
                             <constraint firstItem="oae-cf-Bzm" firstAttribute="centerY" secondItem="qot-il-EDA" secondAttribute="centerY" id="pNH-yh-PWu"/>
@@ -1005,7 +1006,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="r6a-sG-EAx"/>
+        <segue reference="KVP-K2-lnT"/>
         <segue reference="8sw-8l-zpg"/>
     </inferredMetricsTieBreakers>
 </document>
