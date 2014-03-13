@@ -64,6 +64,7 @@
                      new.deck = self.deckref;
                  }
                  [self.csvTextView makeToast:@"CSV imported from Dropbox"];
+                 [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
              } else {
                  [self.navigationController.view makeToast:@"Dropbox imported file must be a .csv file" duration:3.0 position:@"top"];
              }
