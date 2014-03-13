@@ -8,6 +8,7 @@
 
 #import "StudyChooseMethodViewController.h"
 #import "StudyViewCardsViewController.h"
+#import "StudyReminderViewController.h"
 #import "Deck.h"
 
 @interface StudyChooseMethodViewController () <UIAlertViewDelegate>
@@ -74,6 +75,9 @@ NSString * const SEGUE_REMINDER = @"studyReminderSegue";
         StudyViewCardsViewController *viewCardsController = (StudyViewCardsViewController *)segue.destinationViewController;
         viewCardsController.deckref = self.deckref;
         viewCardsController.group = self.group;
+    } else if ([segue.identifier isEqualToString:SEGUE_REMINDER]) {
+        StudyReminderViewController *viewCardsController = (StudyReminderViewController *)segue.destinationViewController;
+        viewCardsController.deckref = self.deckref;
     }
 }
 

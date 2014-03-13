@@ -36,6 +36,8 @@
     [_datePicker setDate: now];
 }
 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -43,15 +45,15 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSString *deckname = self.deckref.name;
     NSDate *selected = [_datePicker date];
-    appDelegate.reminderDate = selected;
+
     NSString *message = [[NSString alloc] initWithFormat:@"date & time selected: %@", selected];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Date and Time selected" message:message delegate:nil cancelButtonTitle:@"sure" otherButtonTitles: nil];
     
     UILocalNotification *notification = [[UILocalNotification alloc]init];
-    [notification setAlertBody:@"notification to study"];
+    [notification setAlertBody:[NSString stringWithFormat:@"Reminder to study %@", deckname]];
     [notification setFireDate:selected];
     [notification setTimeZone:[NSTimeZone defaultTimeZone ]];
     [[UIApplication sharedApplication] setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];

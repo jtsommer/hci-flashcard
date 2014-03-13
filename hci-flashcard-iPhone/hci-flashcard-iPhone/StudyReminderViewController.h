@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface StudyReminderViewController : UIViewController
-
+@property (strong,nonatomic) Deck *deckref;
 @end
