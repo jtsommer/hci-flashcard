@@ -101,7 +101,7 @@ FlashcardStateIdentifier currentState;
         [self nextCard];
     } else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         [self slideViewToSelf:UIViewAnimationTransitionFlipFromLeft];
-        [self nextCard];
+        [self previousCard];
     }
 }
 
