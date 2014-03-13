@@ -494,7 +494,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="20" y="145" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Upload .xls">
+                                <state key="normal" title="Import .csv">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -732,7 +732,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1633" y="1162"/>
         </scene>
-        <!--Dropbox Conversion View Controller-->
+        <!--Dropbox Conversion View Controller - Import .csv-->
         <scene sceneID="MVx-nP-81G">
             <objects>
                 <viewController id="wjW-dC-g92" customClass="DropboxConversionViewController" sceneMemberID="viewController">
@@ -745,7 +745,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DS-dg-rju">
-                                <rect key="frame" x="86" y="79" width="149" height="30"/>
+                                <rect key="frame" x="86" y="110" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Upload from Dropbox">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -755,7 +755,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-h3-Z5I">
-                                <rect key="frame" x="20" y="117" width="280" height="402"/>
+                                <rect key="frame" x="20" y="148" width="280" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -764,18 +764,39 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fBc-T3-XBt">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR1-zC-lH9">
+                                <rect key="frame" x="20" y="72" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="5YI-qL-Byq"/>
+                                    <constraint firstAttribute="height" constant="30" id="Shm-Rh-5Z6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="2DS-dg-rju" secondAttribute="centerX" constant="-0.5" id="84D-a2-lXr"/>
+                            <constraint firstItem="VR1-zC-lH9" firstAttribute="top" secondItem="H2D-TS-rRn" secondAttribute="bottom" constant="20" symbolic="YES" id="BhM-w1-1yo"/>
                             <constraint firstItem="w5S-h3-Z5I" firstAttribute="top" secondItem="2DS-dg-rju" secondAttribute="bottom" constant="8" id="CC3-cg-224"/>
+                            <constraint firstAttribute="centerX" secondItem="VR1-zC-lH9" secondAttribute="centerX" id="EMs-kd-w2b"/>
                             <constraint firstAttribute="trailing" secondItem="w5S-h3-Z5I" secondAttribute="trailing" constant="20" id="ESd-wC-sny"/>
                             <constraint firstItem="dll-sp-PmR" firstAttribute="top" secondItem="w5S-h3-Z5I" secondAttribute="bottom" priority="999" id="LSi-8c-ap5"/>
-                            <constraint firstItem="2DS-dg-rju" firstAttribute="top" secondItem="H2D-TS-rRn" secondAttribute="bottom" constant="15" id="WcA-6r-dES"/>
+                            <constraint firstItem="2DS-dg-rju" firstAttribute="top" secondItem="VR1-zC-lH9" secondAttribute="bottom" constant="8" symbolic="YES" id="Q5P-rB-Y6L"/>
                             <constraint firstItem="w5S-h3-Z5I" firstAttribute="leading" secondItem="JXS-HZ-07c" secondAttribute="leading" constant="20" id="uBs-pR-iNW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xdw-EQ-zda"/>
+                    <navigationItem key="navigationItem" title="Import .csv" id="Xdw-EQ-zda"/>
+                    <connections>
+                        <outlet property="activity" destination="fBc-T3-XBt" id="Mna-LU-pk2"/>
+                        <outlet property="csvTextView" destination="w5S-h3-Z5I" id="agA-Tv-fuj"/>
+                        <outlet property="deckLabel" destination="VR1-zC-lH9" id="0y8-LO-QPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y95-MM-7Qt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,9 @@
 #import "Flashcard.h"
 
 @interface DropboxConversionViewController ()
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;
+@property (weak, nonatomic) IBOutlet UILabel *deckLabel;
+@property (weak, nonatomic) IBOutlet UITextView *csvTextView;
 
 @end
 
@@ -31,6 +34,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.deckLabel.text = self.deckref.name;
 }
 
 #pragma mark Dropbox
@@ -46,9 +50,11 @@
              DBChooserResult *result = results[0];
              NSURL *link = result.link;
              if ([[link pathExtension] isEqualToString:@"csv"]) {
+                 [self.activity startAnimating];
                  // Fetch the datafile from dropbox
                  // This is pretty sketchy, only works on short csv files
                  NSString *csv = [NSString stringWithContentsOfURL:link encoding:NSUTF8StringEncoding error:nil];
+                 self.csvTextView.text = csv;
                  NSArray *rows = [csv CSVComponents];
                  for (int i = 0; i < rows.count; i++) {
                      NSArray *row = rows[i];
@@ -57,9 +63,11 @@
                      new.back = row[1];
                      new.deck = self.deckref;
                  }
+                 [self.csvTextView makeToast:@"CSV imported from Dropbox"];
              } else {
                  [self.navigationController.view makeToast:@"Dropbox imported file must be a .csv file" duration:3.0 position:@"top"];
              }
+             [self.activity stopAnimating];
          } else {
              // User canceled the action
          }
